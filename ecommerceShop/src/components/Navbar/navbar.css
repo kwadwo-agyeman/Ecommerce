@@ -3,9 +3,11 @@ li{
   padding: 6px;
   cursor: pointer;
   transition: all 400ms ease;
+  
 }
 li:hover{
   text-decoration: underline;
+
 }
 
 .nav--menu--alt{

@@ -38,7 +38,6 @@ const NavMenuLarge = styled(Box)(({ theme }) => ({
   [theme.breakpoints.up("sm")]: {
     display: "block",
   },
-
 }));
 function Navbar() {
   const [navSmallMenu, setNavSmallMenu] = useState(false);
@@ -69,9 +68,9 @@ function Navbar() {
     e.currentTarget.style.transition = "400ms all ease";
   }
 
-  const showNavMenuSmall =()=> {
-    setNavSmallMenu((prev)=>(!prev));
-  }
+  const showNavMenuSmall = () => {
+    setNavSmallMenu((prev) => !prev);
+  };
 
   return (
     <div>
@@ -133,7 +132,7 @@ function Navbar() {
 
               <MenuCart>
                 <ShoppingBag />
-                <Box onClick={ showNavMenuSmall }>
+                <Box onClick={showNavMenuSmall}>
                   <Menu />
                 </Box>
               </MenuCart>
@@ -143,12 +142,15 @@ function Navbar() {
       </Box>
       <NavMenuSmall
         sx={{
-          mt: "3rem",
           p: 2,
           bgcolor: "#f0ffff",
-          width: "100%",
           transform: navSmallMenu ? "translateY(0)" : "translateY(-100%)",
           transition: "all 400ms ease",
+          position: "fixed",
+          width: "100%",
+          top: "3rem",
+          left: 0,
+          zIndex: 333,
         }}
       >
         <section style={{ paddingBottom: "2rem" }}>
@@ -192,7 +194,17 @@ function Navbar() {
           </article>
         </section>
       </NavMenuSmall>
-      <NavMenuLarge sx={{ width: "95%", m: "2.0rem auto 0", p: 2 }}>
+      <NavMenuLarge
+        sx={{
+          width: "95%",
+          m: "2.0rem auto 0",
+          p: 2,
+          position: "fixed",
+          width: "100%",
+          left: 0,
+          zIndex: 333,
+        }}
+      >
         <Clothing handleMouseLeave={handleMouseLeave} />
         <Shoes handleMouseLeave={handleMouseLeave} />
         <Perfumes handleMouseLeave={handleMouseLeave} />

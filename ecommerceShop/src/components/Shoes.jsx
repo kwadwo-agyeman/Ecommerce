@@ -8,11 +8,19 @@ function Shoes(props) {
         id="shoes"
         className="nav--menu--alt"
         onMouseLeave={props.handleMouseLeave}
+        style={{
+            position: "absolute",
+            top: "2rem",
+            left: 0,
+            zIndex: 222,
+            width:"100%"
+          }}  
+
       >
         <Box
           sx={{
             p: 2,
-            bgcolor: "#f0ffff",
+            bgcolor: "rgb(240, 255, 255,0.9)",
             display: "grid",
             gridTemplateColumns: "repeat(3,1fr)",
           }}
