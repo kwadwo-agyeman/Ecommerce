@@ -1,7 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import NavSmallMenu from "./NavSmallMenu";
 import "./navbar.css";
-import { AppBar, Box, Breadcrumbs, Toolbar, Typography } from "@mui/material";
+import {
+  AppBar,
+  Box,
+  Modal,
+  Toolbar,
+  Typography,
+} from "@mui/material";
 import ShoppingBag from "@mui/icons-material/ShoppingBagOutlined";
 import Menu from "@mui/icons-material/DragHandleOutlined";
 import { styled } from "@mui/material";
@@ -41,8 +47,25 @@ const NavMenuLarge = styled(Box)(({ theme }) => ({
     display: "block",
   },
 }));
-function Navbar() {
+const style = {
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  height:"80vh",
+  transform: "translate(-50%, -50%)",
+  width: 400,
+  bgcolor: "background.paper",
+  border: "2px solid #000",
+  boxShadow: 24,
+  p: 4,
+  overflow: "auto"
+};
+
+function Navbar(props) {
   const [navSmallMenu, setNavSmallMenu] = useState(false);
+  const [open, setOpen] = React.useState(false);
+  //const [a,sa] = useState(props.quantity)
+  //useEffect(()=>{console.log("changed")},[a])
   const handleDisplay = (e) => {
     const btns = document.querySelectorAll(".btn");
     const navMenus = document.querySelectorAll(".nav--menu--alt");
@@ -73,6 +96,8 @@ function Navbar() {
   const showNavMenuSmall = () => {
     setNavSmallMenu((prev) => !prev);
   };
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
   return (
     <div>
@@ -129,7 +154,7 @@ function Navbar() {
                 >
                   brands
                 </p>
-                <Box >
+                <Box onClick={handleOpen}>
                   <ShoppingBag />
                 </Box>
               </Navlinks>
@@ -140,6 +165,28 @@ function Navbar() {
                   <Menu />
                 </Box>
               </MenuCart>
+              <Modal
+                open={open}
+                onClose={handleClose}
+                aria-labelledby="cart-items"
+                aria-describedby="cart-Items"
+              >
+                <Box sx={style}>
+                  {/*props.cartItem && props.cartItem.map((item, itemIndex) => (
+                    <Box
+                      sx={{ display: "grid", gridTemplateColumns: "1fr 2fr",gap:2,border:"2px solid black",mb:2 }}
+                      key={itemIndex}
+                    >
+                      <article id="cartImg">
+                        <img src={item.img} alt="" />
+                      </article>
+                      <article id="cartInfo">
+                        <Typography>{item.productName}</Typography>
+                      </article>
+                    </Box>
+                  ))*/}
+                </Box>
+              </Modal>
             </Box>
           </Toolbar>
         </AppBar>

@@ -9,16 +9,21 @@ import WomenStore from "./WomenStore";
 import WomenB from "./WomenB";
 import WomenT from "./WomenT";
 import Navbar from "./components/Navbar/Navbar";
+import { CartProvider } from "./context/ShopContext";
 import ChildrenStore from "./ChildrenStore";
 import Card from "./components/CardComponent";
 function App() {
   const [cardArr, setCardArr] = useState([]);
   console.log(cardArr);
   const [filter, setFilter] = useState(true);
-  const [quantity, setQuantity] = useState(cardArr.map(() => 0));
-  console.log(quantity);
-  const [cartItem,setCartItem] = useState("");
-  console.log(cartItem)
+  //const [quantity, setQuantity] = useState(cardArr.map(() => 0));
+  // console.log(quantity);
+  // const [cartItem, setCartItem] = useState(cardArr.map(() => {}));
+  //console.log(cartItem);
+  /* useEffect(() => {
+    setQuantity(cardArr.map(() => 0));
+  }, [cardArr]);
+*/
 
   const toggleMenuHeight = (index, setAddMinus) => {
     setAddMinus((prev) => {
@@ -27,21 +32,7 @@ function App() {
     });
   };
   function inspectCategory(categorizedArr) {
-    const cardItems = categorizedArr.map((cardItem, index) => (
-      <Card
-        key={index}
-        id={cardItem.id}
-        img={cardItem.img}
-        productName={cardItem.productName}
-        gender={cardItem.gender}
-        price={cardItem.price}
-        color={cardItem.color}
-        brand={cardItem.brand}
-        cardItem={cardItem}
-        addToCart={addToCart}
-      />
-    ));
-    setCardArr(cardItems);
+    setCardArr(categorizedArr)
   }
 
   const filterCardContent = (title, cardContent) => {
@@ -63,105 +54,116 @@ function App() {
       inspectCategory(categoryArr);
     }
   };
-  useEffect(() => {
-    setQuantity(cardArr.map(() => 0));
-  }, [cardArr]);
-
-  function addToCart(cardID,cardInfo) {
+  /*
+  function addToCart(cardID, cardInfo) {
+    if(cardID<12){
+      return cardID = cardID
+    }
+    else if (cardID > 12 && cardID < 24){
+      return cardID = cardID - 12
+    }
+    else if(cardID > 24 && cardArr < 36){
+      return cardID = cardID -24
+    }
     setQuantity((prev) => {
       const updatedQty = [...prev];
       updatedQty[cardID - 1] += 1;
       return updatedQty;
     });
-    setCartItem(cardInfo)
+    setCartItem((prev) => {
+      const updatedCartItem = [...prev];
+      updatedCartItem[cardID - 1] = cardInfo;
+      return updatedCartItem;
+    });
   }
-
-
+*/
   return (
     <div>
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route
-          path="/womenStore"
-          element={
-            <WomenStore
-              inspectCategory={inspectCategory}
-              toggleMenuHeight={toggleMenuHeight}
-              cardArr={cardArr}
-              filterCardContent={filterCardContent}
-            />
-          }
-        />
-        <Route
-          path="/womenB"
-          element={
-            <WomenB
-              inspectCategory={inspectCategory}
-              toggleMenuHeight={toggleMenuHeight}
-              cardArr={cardArr}
-              filterCardContent={filterCardContent}
-            />
-          }
-        />
-        <Route
-          path="/womenT"
-          element={
-            <WomenT
-              inspectCategory={inspectCategory}
-              toggleMenuHeight={toggleMenuHeight}
-              cardArr={cardArr}
-              filterCardContent={filterCardContent}
-            />
-          }
-        />
+      <CartProvider>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route
+            path="/womenStore"
+            element={
+              <WomenStore
+                inspectCategory={inspectCategory}
+                toggleMenuHeight={toggleMenuHeight}
+                cardArr={cardArr}
+                filterCardContent={filterCardContent}
+              />
+            }
+          />
+          <Route
+            path="/womenB"
+            element={
+              <WomenB
+                inspectCategory={inspectCategory}
+                toggleMenuHeight={toggleMenuHeight}
+                cardArr={cardArr}
+                filterCardContent={filterCardContent}
+              />
+            }
+          />
+          <Route
+            path="/womenT"
+            element={
+              <WomenT
+                inspectCategory={inspectCategory}
+                toggleMenuHeight={toggleMenuHeight}
+                cardArr={cardArr}
+                filterCardContent={filterCardContent}
+              />
+            }
+          />
 
-        <Route
-          path="/menStore"
-          element={
-            <MenStore
-              inspectCategory={inspectCategory}
-              toggleMenuHeight={toggleMenuHeight}
-              cardArr={cardArr}
-              filterCardContent={filterCardContent}
-            />
-          }
-        />
-        <Route
-          path="/menStoreTS"
-          element={
-            <MenStoreTS
-              inspectCategory={inspectCategory}
-              toggleMenuHeight={toggleMenuHeight}
-              cardArr={cardArr}
-              filterCardContent={filterCardContent}
-            />
-          }
-        />
-        <Route
-          path="/menStoreCT"
-          element={
-            <MenStoreCT
-              inspectCategory={inspectCategory}
-              toggleMenuHeight={toggleMenuHeight}
-              cardArr={cardArr}
-              filterCardContent={filterCardContent}
-            />
-          }
-        />
+          <Route
+            path="/menStore"
+            element={
+              <MenStore
+                inspectCategory={inspectCategory}
+                toggleMenuHeight={toggleMenuHeight}
+                cardArr={cardArr}
+                filterCardContent={filterCardContent}
+              />
+            }
+          />
+          <Route
+            path="/menStoreTS"
+            element={
+              <MenStoreTS
+                inspectCategory={inspectCategory}
+                toggleMenuHeight={toggleMenuHeight}
+                cardArr={cardArr}
+                filterCardContent={filterCardContent}
+              />
+            }
+          />
+          <Route
+            path="/menStoreCT"
+            element={
+              <MenStoreCT
+                inspectCategory={inspectCategory}
+                toggleMenuHeight={toggleMenuHeight}
+                cardArr={cardArr}
+                filterCardContent={filterCardContent}
+              />
+            }
+          />
 
-        <Route
-          path="/childrenStore"
-          element={
-            <ChildrenStore
-              inspectCategory={inspectCategory}
-              toggleMenuHeight={toggleMenuHeight}
-              cardArr={cardArr}
-              filterCardContent={filterCardContent}
-            />
-          }
-        />
-      </Routes>
+          <Route
+            path="/childrenStore"
+            element={
+              <ChildrenStore
+                inspectCategory={inspectCategory}
+                toggleMenuHeight={toggleMenuHeight}
+                cardArr={cardArr}
+                filterCardContent={filterCardContent}
+              />
+            }
+          />
+        </Routes>
+      </CartProvider>
     </div>
   );
 }

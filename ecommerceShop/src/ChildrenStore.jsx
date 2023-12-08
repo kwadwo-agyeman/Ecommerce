@@ -1,6 +1,7 @@
-import React, { useEffect} from "react";
+import React,{ useEffect } from "react";
 import Footer from "./components/Footer";
 import { Box,Typography } from "@mui/material";
+import Card from "./components/CardComponent";
 import LeftGrid from "./components/LeftGrid";
 import "./menstore.css";
 function ChildrenStore(props) {
@@ -56,7 +57,20 @@ function ChildrenStore(props) {
             mt: -1.5,
           }}
         >
-          {props.cardArr}
+          {props.cardArr.map((cardItem, index) => (
+            <Card
+              key={index}
+              id={cardItem.id}
+              img={cardItem.img}
+              productName={cardItem.productName}
+              gender={cardItem.gender}
+              price={cardItem.price}
+              color={cardItem.color}
+              brand={cardItem.brand}
+              addToCart={""}
+              cardItem={cardItem}
+            />
+          ))}
         </Box>
       </Box>
       <Footer />

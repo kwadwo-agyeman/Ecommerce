@@ -54,7 +54,7 @@ function Card(props) {
             </Typography>
             <Tooltip title="Add To Cart">
               <Badge badgeContent={0} color="primary">
-                <ShoppingCart onClick={()=>props.addToCart(props.id,props.cardItem)} />
+                <ShoppingCart onClick={()=>props.addToCart(props.cardItem)} />
               </Badge>
             </Tooltip>
           </Box>

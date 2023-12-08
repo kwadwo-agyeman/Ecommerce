@@ -54,7 +54,20 @@ function MenStoreTS(props) {
             mt: -1.5,
           }}
         >
-          {props.cardArr}
+          {props.cardArr.map((cardItem, index) => (
+            <Card
+              key={index}
+              id={cardItem.id}
+              img={cardItem.img}
+              productName={cardItem.productName}
+              gender={cardItem.gender}
+              price={cardItem.price}
+              color={cardItem.color}
+              brand={cardItem.brand}
+              addToCart={""}
+              cardItem={cardItem}
+            />
+          ))}
         </Box>
       </Box>
       <Footer />
