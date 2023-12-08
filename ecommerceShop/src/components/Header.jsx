@@ -8,7 +8,7 @@ function Header() {
         background:
           "linear-gradient(345deg,rgb(0,0,0,0.3),rgb(0,0,225,0.2)), url(https://images.pexels.com/photos/833052/pexels-photo-833052.jpeg?auto=compress&cs=tinysrgb&w=600) center/cover no-repeat",
         width: "100%",
-        height: "70vh",
+        height:{xs:"60vh",sm:"80vh"},
         marginTop: "-1rem",
         position: "relative",
         zIndex: 111,

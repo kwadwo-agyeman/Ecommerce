@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import NavSmallMenu from "./NavSmallMenu";
 import "./navbar.css";
-import { AppBar, Box, Toolbar, Typography } from "@mui/material";
+import { AppBar, Box, Breadcrumbs, Toolbar, Typography } from "@mui/material";
 import ShoppingBag from "@mui/icons-material/ShoppingBagOutlined";
 import Menu from "@mui/icons-material/DragHandleOutlined";
 import { styled } from "@mui/material";
@@ -9,6 +10,7 @@ import Shoes from "../Shoes";
 import Perfumes from "../Perfumes";
 import Brands from "../Brands";
 import ArrowDown from "@mui/icons-material/KeyboardArrowDownOutlined";
+import { Link } from "react-router-dom";
 const Navlinks = styled(Box)(({ theme }) => ({
   display: "none",
   justifyContent: "space-between",
@@ -105,7 +107,7 @@ function Navbar() {
                 </p>
                 <p
                   data-id="shoes"
-                  className="btn "
+                  className="btn"
                   onMouseEnter={handleDisplay}
                   style={{ cursor: "pointer" }}
                 >
@@ -127,7 +129,9 @@ function Navbar() {
                 >
                   brands
                 </p>
-                <ShoppingBag />
+                <Box >
+                  <ShoppingBag />
+                </Box>
               </Navlinks>
 
               <MenuCart>
@@ -153,51 +157,12 @@ function Navbar() {
           zIndex: 333,
         }}
       >
-        <section style={{ paddingBottom: "2rem" }}>
-          <article
-            style={{ display: "flex", alignItems: "center", gap: "15px" }}
-          >
-            <Typography variant="h5">Clothes</Typography>
-            <article style={{ display: "inline-block" }}>
-              <ArrowDown />
-            </article>
-          </article>
-        </section>
-        <section style={{ paddingBottom: "2rem" }}>
-          <article
-            style={{ display: "flex", alignItems: "center", gap: "15px" }}
-          >
-            <Typography variant="h5">Shoes</Typography>
-            <article style={{ display: "inline-block" }}>
-              <ArrowDown />
-            </article>
-          </article>
-        </section>
-        <section style={{ paddingBottom: "2rem" }}>
-          <article
-            style={{ display: "flex", alignItems: "center", gap: "15px" }}
-          >
-            <Typography variant="h5">Perfumes</Typography>
-            <article style={{ display: "inline-block" }}>
-              <ArrowDown />
-            </article>
-          </article>
-        </section>
-        <section style={{ paddingBottom: "2rem" }}>
-          <article
-            style={{ display: "flex", alignItems: "center", gap: "15px" }}
-          >
-            <Typography variant="h5">Brands</Typography>
-            <article style={{ display: "inline-block" }}>
-              <ArrowDown />
-            </article>
-          </article>
-        </section>
+        <NavSmallMenu />
       </NavMenuSmall>
       <NavMenuLarge
         sx={{
           width: "95%",
-          m: "2.0rem auto 0",
+          m: "1.0rem auto 0",
           p: 2,
           position: "fixed",
           width: "100%",
