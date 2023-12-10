@@ -42,12 +42,13 @@ function NavSmallMenu() {
               <Link to={item.links.children[0]}>
                 {item.content.children[0]}
               </Link>
-              <Link underline="hover" color="inherit" href="/">
-                Women
+
+              <Link to={item.links.children[1]}>
+                {item.content.children[1]}
               </Link>
 
-              <Link underline="hover" color="inherit" href="/">
-                Men
+              <Link to={item.links.children[2]}>
+                {item.content.children[2]}
               </Link>
             </Breadcrumbs>
           </Box>
@@ -70,7 +71,7 @@ const navSmallData = [
     links: {
       women: ["/womenStore", "/womenB", "/womenT"],
       men: ["/menStore", "/menStoreTS", "/menStoreCT"],
-      children: ["/childrenStore"],
+      children: ["/childrenStore","/childrenStoreD","/childrenStoreS"],
     },
   },
 ];

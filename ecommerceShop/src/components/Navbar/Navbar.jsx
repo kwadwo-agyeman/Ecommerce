@@ -297,7 +297,7 @@ function Navbar() {
                             <Typography sx={{ mt: 2 }}>
                               {item.productName}
                             </Typography>
-                            <Typography>Price:$ {item.price}</Typography>
+                            <Typography><b>Price:</b> ${item.price}</Typography>
                             <article
                               style={{
                                 marginTop: "5%",

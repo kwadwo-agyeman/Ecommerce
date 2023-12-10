@@ -39,7 +39,6 @@ function Clothing(props) {
                     to="/womenStore"
                     style={{ textDecoration: "none", color: "black" }}
                   >
-                    {" "}
                     All Category
                   </Link>
                 </li>
@@ -48,7 +47,6 @@ function Clothing(props) {
                     to="/womenB"
                     style={{ textDecoration: "none", color: "black" }}
                   >
-                    {" "}
                     Blouses
                   </Link>
                 </li>
@@ -78,7 +76,6 @@ function Clothing(props) {
                     to="/menStore"
                     style={{ textDecoration: "none", color: "black" }}
                   >
-                    {" "}
                     All Category
                   </Link>
                 </li>
@@ -87,7 +84,6 @@ function Clothing(props) {
                     to="/menStoreTS"
                     style={{ textDecoration: "none", color: "black" }}
                   >
-                    {" "}
                     T-Shirts
                   </Link>
                 </li>
@@ -96,7 +92,6 @@ function Clothing(props) {
                     to="/menStoreCT"
                     style={{ textDecoration: "none", color: "black" }}
                   >
-                    {" "}
                     Polo T-Shirts
                   </Link>
                 </li>
@@ -117,12 +112,25 @@ function Clothing(props) {
                     to="/childrenStore"
                     style={{ textDecoration: "none", color: "black" }}
                   >
-                    {" "}
                     Children's Clothing
                   </Link>
                 </li>
-                <li>Dress</li>
-                <li>Shirts</li>
+                <li>
+                  <Link
+                    to="/childrenStoreD"
+                    style={{ textDecoration: "none", color: "black" }}
+                  >
+                    Dress
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/childrenStoreS"
+                    style={{ textDecoration: "none", color: "black" }}
+                  >
+                    Shirts
+                  </Link>
+                </li>
               </ul>
             </section>
           </article>

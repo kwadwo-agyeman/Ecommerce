@@ -11,7 +11,8 @@ import WomenT from "./WomenT";
 import Navbar from "./components/Navbar/Navbar";
 import { CartProvider } from "./context/ShopContext";
 import ChildrenStore from "./ChildrenStore";
-
+import ChildrenStoreD from "./ChildrenStoreD";
+import ChildrenStoreS from "./ChildrenStoreS";
 function App() {
   // State to manage the array of cards
   const [cardArr, setCardArr] = useState([]);
@@ -136,6 +137,30 @@ function App() {
             path="/childrenStore"
             element={
               <ChildrenStore
+                inspectCategory={inspectCategory}
+                toggleMenuHeight={toggleMenuHeight}
+                cardArr={cardArr}
+                filterCardContent={filterCardContent}
+              />
+            }
+          />
+
+          <Route
+            path="/childrenStoreD"
+            element={
+              <ChildrenStoreD
+                inspectCategory={inspectCategory}
+                toggleMenuHeight={toggleMenuHeight}
+                cardArr={cardArr}
+                filterCardContent={filterCardContent}
+              />
+            }
+          />
+
+          <Route
+            path="/childrenStoreS"
+            element={
+              <ChildrenStoreS
                 inspectCategory={inspectCategory}
                 toggleMenuHeight={toggleMenuHeight}
                 cardArr={cardArr}
