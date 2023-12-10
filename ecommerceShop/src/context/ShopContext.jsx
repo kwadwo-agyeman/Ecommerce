@@ -1,5 +1,3 @@
-// CartContext.js
-
 import React, { createContext, useContext, useState } from "react";
 
 const CartContext = createContext();
@@ -10,26 +8,48 @@ export const useCart = () => {
 
 export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
+  console.log(cartItems);
 
-  const addToCart = (cardInfo) => {
+  const addToCart = (cardInfo,quantityChange) => {
     // Check if the item is already in the cart
-    const existingCartItem = cartItems.find((item) => item.id === cardInfo.id);
+    const updatedCartItems = [...cartItems];
 
-    if (existingCartItem) {
+    const existingCartItemIndex = updatedCartItems.findIndex(
+      (item) => item.id === cardInfo.id
+    );
+    console.log(existingCartItemIndex);
+    if (existingCartItemIndex !== -1) {
       // If the item is already in the cart, update its quantity
-      setCartItems((prevItems) =>
-        prevItems.map((item) =>
-          item.id === cardInfo.id-1 ? { ...item, quantity: item.quantity + 1 } : item
-        )
-      );
+      updatedCartItems[existingCartItemIndex] = {
+        ...updatedCartItems[existingCartItemIndex],
+        quantity:
+          updatedCartItems[existingCartItemIndex].quantity + quantityChange,
+      };
     } else {
       // If the item is not in the cart, add it with quantity 1
-      setCartItems((prevItems) => [...prevItems, { ...cardInfo, quantity: 1 }]);
+      updatedCartItems.push({ ...cardInfo, quantity: 1 });
     }
+    setCartItems(updatedCartItems);
+
   };
 
+  const removeFromCart = (itemId, quantityChange) => {
+    const updatedCartItems = cartItems.map((item) =>
+      item.id === itemId ? { ...item, quantity: item.quantity - quantityChange } : item
+    );
+
+    setCartItems(updatedCartItems.filter((item) => item.quantity > 0));
+  };
+
+  const handleQuantityChange = (itemId, newQuantity) => {
+    const updatedCartItems = cartItems.map((item) =>
+      item.id === itemId ? { ...item, quantity: newQuantity } : item
+    );
+  
+    setCartItems(updatedCartItems);
+  };
   return (
-    <CartContext.Provider value={{ cartItems, addToCart }}>
+    <CartContext.Provider value={{ cartItems, addToCart,removeFromCart,handleQuantityChange }}>
       {children}
     </CartContext.Provider>
   );

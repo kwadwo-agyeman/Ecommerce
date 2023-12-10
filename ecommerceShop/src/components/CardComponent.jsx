@@ -6,8 +6,15 @@ import Checkbox from "@mui/material/Checkbox";
 import React from "react";
 
 function Card(props) {
+  // Find the corresponding item in the cart
+  const cartItem = props.cartItems.find(
+    (item) => item.id === props.cardItem.id
+  );
+  console.log(cartItem);
+
   return (
     <div>
+      {/* Card Container */}
       <Box
         sx={{
           border: "1px solid #ECF0F1",
@@ -23,8 +30,10 @@ function Card(props) {
           position: "relative",
         }}
       >
+        {/* Image Section */}
         <Box sx={{ p: 1, position: "relative" }}>
           <img style={{ height: "23rem" }} src={props.img} alt="" />
+          {/* Favorite Icon */}
           <Box sx={{ position: "absolute", top: 6, right: 6 }}>
             <Checkbox
               icon={<FavoriteBorderIcon sx={{ fontSize: "35px" }} />}
@@ -34,11 +43,15 @@ function Card(props) {
             />
           </Box>
         </Box>
+        {/* Divider */}
         <Divider></Divider>
+        {/* Content Section */}
         <Box sx={{ p: 1 }}>
+          {/* Product Name */}
           <Typography sx={{ fontWeight: 500 }}>{props.productName}</Typography>
           <br />
           <br />
+          {/* Price and Add to Cart */}
           <Box
             sx={{
               display: "flex",
@@ -49,12 +62,19 @@ function Card(props) {
               bottom: "10px",
             }}
           >
+            {/* Price */}
             <Typography>
               <span style={{ fontWeight: 500 }}>Price:</span> ${props.price}
             </Typography>
+            {/* Add To Cart Button */}
             <Tooltip title="Add To Cart">
-              <Badge badgeContent={0} color="primary">
-                <ShoppingCart onClick={()=>props.addToCart(props.cardItem)} />
+              <Badge
+                badgeContent={cartItem ? cartItem.quantity : 0}
+                color="primary"
+              >
+                <ShoppingCart
+                  onClick={() => props.addToCart(props.cardItem, 1)}
+                />
               </Badge>
             </Tooltip>
           </Box>

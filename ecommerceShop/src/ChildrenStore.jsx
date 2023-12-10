@@ -1,35 +1,44 @@
-import React,{ useEffect } from "react";
+import React, { useEffect } from "react";
 import Footer from "./components/Footer";
-import { Box,Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import Card from "./components/CardComponent";
 import LeftGrid from "./components/LeftGrid";
+import { useCart } from "./context/ShopContext";
 import "./menstore.css";
 function ChildrenStore(props) {
+  // Destructuring cartItems and addToCart from the useCart hook
+  const { cartItems, addToCart } = useCart();
 
+  // useEffect to mount items and add/remove event listener on DOMContentLoaded
   useEffect(() => {
+    // Function to mount items
     function mountItems() {
       props.inspectCategory(cardContent);
     }
+
+    // Initial mount and event listener for DOMContentLoaded
     mountItems();
     window.addEventListener("DOMContentLoaded", mountItems);
+
+    // Cleanup: remove event listener on component unmount
     return () => {
       window.removeEventListener("DOMContentLoaded", mountItems);
     };
   }, []);
 
-  
-
   return (
     <div>
+      {/* Header Section */}
       <Box sx={{ padding: 2 }}>
         <Typography
           sx={{ mt: 7, fontSize: { xs: "30px", sm: "30px" }, fontWeight: 500 }}
           variant="h3"
         >
-          MENS' CLOTHING
+          CHILDREN'S CLOTHING
         </Typography>
       </Box>
 
+      {/* Main Content Section */}
       <Box
         sx={{
           display: "grid",
@@ -38,9 +47,11 @@ function ChildrenStore(props) {
           p: 2,
         }}
       >
+        {/* Filter Section */}
         <Box sx={{ bgcolor: "#FFF8F0", p: 2, height: "fit-content" }}>
           <Typography>Filter Results</Typography>
           <Typography>(select a filter at a time)</Typography>
+          {/* LeftGrid Component */}
           <LeftGrid
             leftGrid={leftGrid}
             cardContent={cardContent}
@@ -48,6 +59,8 @@ function ChildrenStore(props) {
             toggleMenuHeight={props.toggleMenuHeight}
           />
         </Box>
+
+        {/* Cards Section */}
         <Box
           sx={{
             display: "grid",
@@ -57,6 +70,7 @@ function ChildrenStore(props) {
             mt: -1.5,
           }}
         >
+          {/* Mapping through cardArr and rendering Card component */}
           {props.cardArr.map((cardItem, index) => (
             <Card
               key={index}
@@ -67,19 +81,21 @@ function ChildrenStore(props) {
               price={cardItem.price}
               color={cardItem.color}
               brand={cardItem.brand}
-              addToCart={""}
+              addToCart={addToCart}
               cardItem={cardItem}
+              cartItems={cartItems}
             />
           ))}
         </Box>
       </Box>
+
+      {/* Footer Section */}
       <Footer />
     </div>
   );
 }
 
 export default ChildrenStore;
-
 const leftGrid = [
   { header: "Brand", body: { title1: "Champion", title2: "nike" } },
   { header: "Color", body: { title1: "black", title2: "grey" } },

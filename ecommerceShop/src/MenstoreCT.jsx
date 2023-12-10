@@ -1,16 +1,26 @@
 import React, { useEffect } from "react";
-import Navbar from "./components/Navbar/Navbar";
+import Card from "./components/CardComponent";
 import Footer from "./components/Footer";
 import { Box, Typography } from "@mui/material";
 import LeftGrid from "./components/LeftGrid";
 import "./menstore.css";
+import { useCart } from "./context/ShopContext";
 function MenStoreCT(props) {
+  // Destructuring cartItems and addToCart from the useCart hook
+  const { cartItems, addToCart } = useCart();
+
+  // useEffect to mount items and add/remove event listener on DOMContentLoaded
   useEffect(() => {
+    // Function to mount items
     function mountItems() {
       props.inspectCategory(cardContent);
     }
+
+    // Initial mount and event listener for DOMContentLoaded
     mountItems();
     window.addEventListener("DOMContentLoaded", mountItems);
+
+    // Cleanup: remove event listener on component unmount
     return () => {
       window.removeEventListener("DOMContentLoaded", mountItems);
     };
@@ -18,6 +28,7 @@ function MenStoreCT(props) {
 
   return (
     <div>
+      {/* Header Section */}
       <Box sx={{ padding: 2 }}>
         <Typography
           sx={{ mt: 7, fontSize: { xs: "30px", sm: "30px" }, fontWeight: 500 }}
@@ -27,6 +38,7 @@ function MenStoreCT(props) {
         </Typography>
       </Box>
 
+      {/* Main Content Section */}
       <Box
         sx={{
           display: "grid",
@@ -35,9 +47,11 @@ function MenStoreCT(props) {
           p: 2,
         }}
       >
+        {/* Filter Section */}
         <Box sx={{ bgcolor: "#FFF8F0", p: 2, height: "fit-content" }}>
           <Typography>Filter Results</Typography>
           <Typography>(select a filter at a time)</Typography>
+          {/* LeftGrid Component */}
           <LeftGrid
             leftGrid={leftGrid}
             cardContent={cardContent}
@@ -45,6 +59,8 @@ function MenStoreCT(props) {
             toggleMenuHeight={props.toggleMenuHeight}
           />
         </Box>
+
+        {/* Cards Section */}
         <Box
           sx={{
             display: "grid",
@@ -54,6 +70,7 @@ function MenStoreCT(props) {
             mt: -1.5,
           }}
         >
+          {/* Mapping through cardArr and rendering Card component */}
           {props.cardArr.map((cardItem, index) => (
             <Card
               key={index}
@@ -64,12 +81,15 @@ function MenStoreCT(props) {
               price={cardItem.price}
               color={cardItem.color}
               brand={cardItem.brand}
-              addToCart={""}
+              addToCart={addToCart}
               cardItem={cardItem}
+              cartItems={cartItems}
             />
           ))}
         </Box>
       </Box>
+
+      {/* Footer Section */}
       <Footer />
     </div>
   );
@@ -83,7 +103,7 @@ const leftGrid = [
 ];
 const cardContent = [
   {
-    id: 1,
+    id: 25,
     img: "https://33000ft.com/cdn/shop/products/1_30845dc1-a210-4978-92d7-807c64824ecc.jpg?v=1673001510",
     productName: "Men's UPF50+ Golf Polo Short Sleeve Collared",
     gender: "men",
@@ -94,7 +114,7 @@ const cardContent = [
     color: "grey",
   },
   {
-    id: 2,
+    id: 26,
     img: "https://media.endclothing.com/media/catalog/product/_/4/_408321-X7331-9060_m1_1.jpg",
     productName: "Gucci GRG Collar Polo",
     gender: "men",
@@ -105,7 +125,7 @@ const cardContent = [
     color: "white",
   },
   {
-    id: 3,
+    id: 27,
     img: "https://www.code-zero.com/uploads/media/68/59/6f/1634566427/polo-shirt-men-performance-front-washed-grey.jpg",
     productName: "Polo Shirt Men Performance",
     gender: "men",
@@ -116,7 +136,7 @@ const cardContent = [
     color: "grey",
   },
   {
-    id: 4,
+    id: 28,
     img: "https://bta.scene7.com/is/image/brownthomas/2000548003_01?$pdp_zoom$&$jpg$",
     productName: "GUCCI Contrast Piquet Cotton Polo",
     gender: "men",
@@ -127,7 +147,7 @@ const cardContent = [
     color: "black",
   },
   {
-    id: 5,
+    id: 29,
     img: "https://i5.walmartimages.com/asr/feb5f348-ecba-447e-812a-7a4f6e01effc_1.469881b7ddd8ef62580c058aa72bbd24.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF",
     productName: "Polo Authority Men's Tall Tech Pique",
     gender: "men",
@@ -138,7 +158,7 @@ const cardContent = [
     color: "grey",
   },
   {
-    id: 6,
+    id: 30,
     img: "https://media.gucci.com/style/DarkGray_Center_0_0_490x490/1671476411/713997_XJETR_9088_001_100_0000_Light.jpg",
     productName: "Gucci Cotton Jersey Polo",
     gender: "men",
