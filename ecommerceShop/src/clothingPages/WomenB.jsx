@@ -1,12 +1,11 @@
 import React, { useEffect } from "react";
-import Card from "./components/CardComponent";
-import Footer from "./components/Footer";
+import Card from "../components/CardComponent";
+import Footer from "../components/Footer";
 import { Box, Typography } from "@mui/material";
-import LeftGrid from "./components/LeftGrid";
+import LeftGrid from "../components/LeftGrid";
+import { useCart } from "../context/ShopContext";
 import "./menstore.css";
-import { useCart } from "./context/ShopContext";
-
-function MenStoreTS(props) {
+function WomenB(props) {
   // Destructuring cartItems and addToCart from the useCart hook
   const { cartItems, addToCart } = useCart();
 
@@ -35,7 +34,7 @@ function MenStoreTS(props) {
           sx={{ mt: 7, fontSize: { xs: "30px", sm: "30px" }, fontWeight: 500 }}
           variant="h3"
         >
-          T-SHIRTS
+          BLOUSES
         </Typography>
       </Box>
 
@@ -95,77 +94,79 @@ function MenStoreTS(props) {
     </div>
   );
 }
-export default MenStoreTS;
+
+export default WomenB;
+
 const leftGrid = [
-  { header: "Brand", body: { title1: "LV", title2: "Off White" } },
-  { header: "Color", body: { title1: "black", title2: "red" } },
+  { header: "Brand", body: { title1: "Zara", title2: "H&M" } },
+  { header: "Color", body: { title1: "green", title2: "yellow" } },
   { header: "Price", body: { title1: "$0-$120", title2: "$120-$500" } },
 ];
 const cardContent = [
   {
-    id: 31,
-    img: "https://us.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-stripe-accent-monogram-t-shirt-obsoletes-do-not-touch--FOTS37TR1613_PM2_Front%20view.jpg",
-    productName: "Strip Accent Monogram T-Shirt",
-    gender: "men",
+    id: 37,
+    img: "https://images.stylight.net/image/upload/t_web_product_330x440max_nobg/q_auto:eco,f_auto/cjdk0hnsa3iadetuctrf.webp",
+    productName: "Green Women's Satin Blouse",
+    gender: "women",
     price: 145.0,
     priceCategory: "$120-$500",
-    brand: "LV",
+    brand: "Zara",
     size: 6.5,
-    color: "black",
+    color: "green",
   },
   {
-    id: 32,
-    img: "https://dopestreet.co/wp-content/uploads/2021/04/Off-White-Airport-Tape-Baggage-Black-Tee-Back-600x600.jpg",
-    productName: "Off-White Seeing Things",
-    gender: "men",
+    id: 38,
+    img: "https://cdn.mall.adeptmind.ai/https%3A%2F%2Flp2.hm.com%2Fhmgoepprod%3Fset%3Dquality%255B79%255D%252Csource%255B%252F0a%252F5c%252F0a5c03d6340c6ee8e56f01e4fe85f4522280a10c.jpg%255D%252Corigin%255Bdam%255D%252Ccategory%255B%255D%252Ctype%255BLOOKBOOK%255D%252Cres%255Bm%255D%252Chmver%255B1%255D%26call%3Durl%255Bfile%3A%2Fproduct%2Fmain%255D_large.webp",
+    productName: "H&M Boxy Vicose Blouse",
+    gender: "women",
     price: 155.23,
     priceCategory: "$120-$500",
-    brand: "Off White",
+    brand: "H&M",
     size: 7.0,
-    color: "black",
+    color: "green",
   },
   {
-    id: 33,
-    img: "https://us.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-stripe-accent-monogram-t-shirt-obsoletes-do-not-touch--FOTS37TR1522_PM2_Front%20view.jpg",
-    productName: "Strip Accent Monogram T-Shirt",
-    gender: "men",
+    id: 39,
+    img: "https://images.vestiairecollective.com/cdn-cgi/image/w=1246,q=70,f=auto,/produit/yellow-not-specified-zara-top-26942165-2_1.jpg",
+    productName: "Zara Blouse Yellow Size 6",
+    gender: "women",
     price: 145.0,
     priceCategory: "$120-$500",
-    brand: "LV",
+    brand: "Zara",
     size: 6.5,
-    color: "red",
+    color: "yellow",
   },
   {
-    id: 34,
-    img: "https://www.mrporter.com/variants/images/1647597315003152/in/w2000_q60.jpg",
-    productName: "Logo-Print Cotton-Jersey T-Shirt",
-    gender: "men",
+    id: 40,
+    img: "https://cdna.lystit.com/photos/hm/46e26bdd/hm-Black-Blouse.jpeg",
+    productName: "Elegance in Bloom Blouse",
+    gender: "women",
     price: 100,
     priceCategory: "$0-$120",
-    brand: "Off White",
+    brand: "H&M",
     size: 7.0,
     color: "black",
   },
   {
-    id: 35,
-    img: "https://www.kickscrew.com/cdn/shop/products/main-square_3f80b21b-e725-4003-ad54-ad944d629028_540x.jpg?v=1695378342",
-    productName: "OFF-WHITEXChampion MENS",
-    gender: "men",
+    id: 41,
+    img: "https://target.scene7.com/is/image/Target/GUEST_6c7a86de-526c-426f-94a6-5f1270e032bc?wid=488&hei=488&fmt=pjpeg",
+    productName: "Women's Long Sleeve Loose Button-down Shirt",
+    gender: "women",
     price: 345.5,
     priceCategory: "$120-$500",
-    brand: "Off White",
+    brand: "Zara",
     size: 6.5,
-    color: "red",
+    color: "yellow",
   },
   {
-    id: 36,
-    img: "https://images.stockx.com/images/OFF-WHITE-Mona-Lisa-Longsleeve-T-Shirt-Red.png?fit=fill&bg=FFFFFF&w=480&h=320&fm=jpg&auto=compress&dpr=2&trim=color&updated_at=1615596479&q=60",
-    productName: "OFF-WHITE MONA LISA Longsleeve  ",
-    gender: "men",
+    id: 42,
+    img: "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2F8c%2Ff6%2F8cf6d32420f81d791b98c74e0bcf4c2b2cef2af1.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BLOOKBOOK%5D%2Cres%5Bm%5D%2Chmver%5B1%5D&call=url[file:/product/main]",
+    productName: "Boxy Vicose Blouse H&M",
+    gender: "women",
     price: 375,
     priceCategory: "$120-$500",
-    brand: "topMan",
+    brand: "H&M",
     size: 6.5,
-    color: "grey",
+    color: "green",
   },
 ];

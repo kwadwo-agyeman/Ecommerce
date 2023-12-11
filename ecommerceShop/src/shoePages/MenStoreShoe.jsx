@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
-import Card from "./components/CardComponent";
-import Footer from "./components/Footer";
+import Card from "../components/CardComponent";
+import Footer from "../components/Footer";
 import { Box, Typography } from "@mui/material";
-import LeftGrid from "./components/LeftGrid";
-import "./menstore.css";
-import { useCart } from "./context/ShopContext";
+import LeftGrid from "../components/LeftGrid";
+import "../clothingPages/menstore.css";
+import { useCart } from "../context/ShopContext";
 
-function ChildrenStoreD(props) {
+function MenStoreShoe(props) {
   // Destructuring values from the useCart hook
   const { cartItems, addToCart } = useCart();
 
@@ -41,7 +41,7 @@ function ChildrenStoreD(props) {
           }}
           variant="h3"
         >
-          DRESSES
+          MEN'S SHOES
         </Typography>
       </Box>
 
@@ -96,78 +96,78 @@ function ChildrenStoreD(props) {
     </div>
   );
 }
-export default ChildrenStoreD;
+export default MenStoreShoe;
 
 const leftGrid = [
-  { header: "Brand", body: { title1: "Zara", title2: "Forever21" } },
-  { header: "Color", body: { title1: "pink", title2: "white" } },
+  { header: "Brand", body: { title1: "Puma", title2: "Ferragamo" } },
+  { header: "Color", body: { title1: "black", title2: "white" } },
   { header: "Price", body: { title1: "$0-$120", title2: "$120-$500" } },
 ];
 const cardContent = [
   {
-    id: 61,
-    img: "https://www.thehanfus.com/cdn/shop/products/WeddingDressBirthdayDressPageantDressesLaceEmbroideryDressPrincessChineseStyleDressTrystHanfus_2.png?v=1619574395",
-    productName: "Flower Girl Wedding Dress ",
-    gender: "children",
+    id: 73,
+    img:"https://i5.walmartimages.com/asr/10aa1e9f-1123-4261-b64d-f700ab5d7e6f.f2bad978e804a267df1abda2d226cdc3.jpeg",
+    productName: "Men's Brown Shoe ",
+    gender: "men",
     price: 145.0,
     priceCategory: "$120-$500",
-    brand: "Forever21",
+    brand: "Prada",
     size: 6.5,
-    color: "white",
+    color: "brown",
   },
   {
-    id: 62,
-    img: "https://ae01.alicdn.com/kf/Sb898c366c9654aa78c0602ee610fa197T/Girls-Wedding-Dress-For-Flower-Children-s-Summer-Design-Birthday-Party-Dresses-For-Girls-4-to.jpg",
-    productName: "Butterfly Chrome Style Dress",
-    gender: "children",
+    id: 74,
+    img: "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/3b4a9386-7dc8-463b-a83f-48d0c3c7cc7d/air-max-pre-day-mens-shoes-JBXGg7.png",
+    productName: "Nike Air Max Pre-Day",
+    gender: "men",
     price: 155.23,
     priceCategory: "$120-$500",
-    brand: "Forever21",
+    brand: "Nike",
     size: 7.0,
-    color: "white",
+    color: "other",
   },
   {
-    id: 63,
-    img: "https://ae01.alicdn.com/kf/HTB1i0tKXMDD8KJjy0Fdq6AjvXXa1.jpg_640x640Q90.jpg_.webp",
-    productName: "",
-    gender: "children",
+    id: 75,
+    img: "https://image-raw.reversible.com/raw_images/b06a0c0512f6b127899244e4de2bb454e78354387a5dccfaf0e1ea0a38be70e1",
+    productName: "Men's Ferragamo Shoe",
+    gender: "men",
     price: 145.0,
     priceCategory: "$120-$500",
-    brand: "Zara",
+    brand: "Ferragamo",
     size: 6.5,
-    color: "white",
+    color: "black",
   },
   {
-    id: 64,
-    img: "https://ae01.alicdn.com/kf/S20d423875ba740a3ab26d2007c776c9bn.jpg_640x640Q90.jpg_.webp",
-    productName: "Elegance in Bloom Dress",
-    gender: "children",
+    id: 76,
+    img: "https://static.qns.digital/img/p/1/6/1/3/8/2/7/1613827.jpg",
+    productName: "Nike Air Max Phantom",
+    gender: "men",
     price: 100,
     priceCategory: "$0-$120",
-    brand: "H&M",
+    brand: "Nike",
     size: 7.0,
-    color: "pink",
+    color: "other",
   },
   {
-    id: 65,
-    img: "https://estylecdn.com/manufcols/ashleylauren/current/zoomalt/8120_bi_front.jpg",
-    productName: "Children's Bloom Gown",
-    gender: "children",
+    id: 77,
+    img: "https://www.luxinabox.com/wp-content/uploads/2021/05/735190_00_r20-scaled.jpg",
+    productName: "Salvatore Ferragamo Loafers",
+    gender: "men",
     price: 345.5,
     priceCategory: "$120-$500",
-    brand: "Zara",
+    brand: "Ferragamo",
     size: 6.5,
-    color: "white",
+    color: "black",
   },
   {
-    id: 66,
-    img: "https://www.loveshackfancy.com/cdn/shop/files/MAZINADRESS-BERRYMOMENT-GD097-1744_003.jpg?v=1698942792&width=757",
-    productName: "Boxy Vicose Tunic Forever 21",
-    gender: "children",
+    id: 78,
+    img: "https://yesoriginal.com.ua/image/cache/catalog/other_images/377333-11-2-472x497.webp",
+    productName: "Viz Runner Repeat",
+    gender: "men",
     price: 375,
     priceCategory: "$120-$500",
-    brand: "Forever21",
+    brand: "Puma",
     size: 6.5,
-    color: "pink",
+    color: "white",
   },
 ];

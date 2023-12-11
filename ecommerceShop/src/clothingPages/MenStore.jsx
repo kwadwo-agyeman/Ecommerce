@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
-import Card from "./components/CardComponent";
-import Footer from "./components/Footer";
+import Card from "../components/CardComponent";
+import Footer from "../components/Footer";
 import { Box, Typography } from "@mui/material";
-import LeftGrid from "./components/LeftGrid";
+import LeftGrid from "../components/LeftGrid";
 import "./menstore.css";
-import { useCart } from "./context/ShopContext";
+import { useCart } from "../context/ShopContext";
 
 function MenStore(props) {
   // Destructuring cartItems and addToCart from the useCart hook

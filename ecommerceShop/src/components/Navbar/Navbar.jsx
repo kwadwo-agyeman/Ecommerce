@@ -263,6 +263,7 @@ function Navbar() {
               >
                 <Box sx={{}}>
                   <ModalBox sx={style}>
+                    <Typography variant="h6" sx={{fontWeight:500}}>CART ITEMS</Typography>
                     {/* Display each item in the cart */}
                     {cartItems &&
                       cartItems.map((item, itemIndex) => (
@@ -407,6 +408,7 @@ function Navbar() {
           top: "3rem",
           left: 0,
           zIndex: 333,
+          padding:"10px 10px",
         }}
       >
         <NavSmallMenu />

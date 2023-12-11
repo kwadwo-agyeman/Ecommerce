@@ -36,9 +36,9 @@ function Card(props) {
           {/* Favorite Icon */}
           <Box sx={{ position: "absolute", top: 6, right: 6 }}>
             <Checkbox
-              icon={<FavoriteBorderIcon sx={{ fontSize: "35px" }} />}
+              icon={<FavoriteBorderIcon sx={{ fontSize: "35px",color:"black",bgcolor:"rgb(225,225,225,0.8)",backdropFilter:"8px",borderRadius:"50%", p:1 }} />}
               checkedIcon={
-                <FavoriteIcon sx={{ color: "grey", fontSize: "35px" }} />
+                <FavoriteIcon sx={{ color: "grey", fontSize: "35px",bgcolor:"white",borderRadius:"50%", p:1  }} />
               }
             />
           </Box>

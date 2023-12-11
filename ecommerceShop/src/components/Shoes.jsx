@@ -1,5 +1,6 @@
 import React from "react";
 import { Box,Typography } from "@mui/material";
+import { Link } from "react-router-dom";
 
 function Shoes(props) {
   return (
@@ -34,9 +35,23 @@ function Shoes(props) {
             </Typography>
             <section>
               <ul>
-                <li>All Category</li>
+              <li>
+                  <Link
+                    to="/womenStoreShoe"
+                    style={{ textDecoration: "none", color: "black" }}
+                  >
+                    All Category
+                  </Link>
+                </li>
                 <li>Sneakers</li>
-                <li>High Heels</li>
+                <li>
+                  <Link
+                    to="/womenStoreH"
+                    style={{ textDecoration: "none", color: "black" }}
+                  >
+                    Heels
+                  </Link>
+                </li>
               </ul>
             </section>
           </article>
@@ -49,9 +64,30 @@ function Shoes(props) {
             </Typography>
             <section>
               <ul>
-                <li>All Category</li>
-                <li>Athletic Shoes</li>
-                <li>Casual Boots</li>
+              <li>
+                  <Link
+                    to="/menStoreShoe"
+                    style={{ textDecoration: "none", color: "black" }}
+                  >
+                    All Category
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/menStoreAS"
+                    style={{ textDecoration: "none", color: "black" }}
+                  >
+                    Athletic Shoes
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/menStoreCB"
+                    style={{ textDecoration: "none", color: "black" }}
+                  >
+                    Casual Boots
+                  </Link>
+                </li>
               </ul>
             </section>
           </article>

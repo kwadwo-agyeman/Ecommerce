@@ -1,4 +1,4 @@
-import { Box, Breadcrumbs, Typography } from "@mui/material";
+import { Box, Breadcrumbs, Divider, Typography } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -11,7 +11,9 @@ function NavSmallMenu() {
             <article
               style={{ display: "flex", alignItems: "center", gap: "15px" }}
             >
-              <Typography variant="h5">{item.header}</Typography>
+              <Typography variant="h5" sx={{ ml: "10px" }}>
+                {item.header}
+              </Typography>
               <article style={{ display: "inline-block" }}></article>
             </article>
             {/********** WOMEN ******* */}
@@ -24,6 +26,7 @@ function NavSmallMenu() {
               <Link to={item.links.women[1]}>{item.content.women[1]}</Link>
               <Link to={item.links.women[2]}>{item.content.women[2]}</Link>
             </Breadcrumbs>
+
             {/********** MEN ******* */}
             <Breadcrumbs aria-label={item.header} sx={{ p: 1 }}>
               <Typography sx={{ display: "block" }}>
@@ -34,6 +37,7 @@ function NavSmallMenu() {
               <Link to={item.links.men[2]}>{item.content.men[2]}</Link>
             </Breadcrumbs>
 
+            {/****** CHILDREN ******/}
             <Breadcrumbs aria-label={item.header} sx={{ p: 1 }}>
               <Typography sx={{ display: "block" }}>
                 {item.gender[2]}
@@ -51,6 +55,8 @@ function NavSmallMenu() {
                 {item.content.children[2]}
               </Link>
             </Breadcrumbs>
+
+            <Divider></Divider>
           </Box>
         ))}
       </section>
@@ -71,7 +77,21 @@ const navSmallData = [
     links: {
       women: ["/womenStore", "/womenB", "/womenT"],
       men: ["/menStore", "/menStoreTS", "/menStoreCT"],
-      children: ["/childrenStore","/childrenStoreD","/childrenStoreS"],
+      children: ["/childrenStore", "/childrenStoreD", "/childrenStoreS"],
+    },
+  },
+  {
+    header: "Shoes",
+    gender: ["Women", "Men", "Children"],
+    content: {
+      women: ["All Category", "Blouse", "Tunics"],
+      men: ["All Category", "Athletic Shoes", "Casual Boots"],
+      children: ["All Category", "Dress", "Shirts"],
+    },
+    links: {
+      women: ["/womenStore", "/women", "/womenStoreH"],
+      men: ["/menStoreShoe", "/menStoreAS", "/menStoreCB"],
+      children: ["/childrenStore", "/childrenStoreD", "/childrenStoreS"],
     },
   },
 ];

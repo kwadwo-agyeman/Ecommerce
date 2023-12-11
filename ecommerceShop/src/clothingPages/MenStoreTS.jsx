@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
-import Card from "./components/CardComponent";
-import Footer from "./components/Footer";
+import Card from "../components/CardComponent";
+import Footer from "../components/Footer";
 import { Box, Typography } from "@mui/material";
-import LeftGrid from "./components/LeftGrid";
+import LeftGrid from "../components/LeftGrid";
 import "./menstore.css";
-import { useCart } from "./context/ShopContext";
-function MenStoreCT(props) {
+import { useCart } from "../context/ShopContext";
+
+function MenStoreTS(props) {
   // Destructuring cartItems and addToCart from the useCart hook
   const { cartItems, addToCart } = useCart();
 
@@ -34,7 +35,7 @@ function MenStoreCT(props) {
           sx={{ mt: 7, fontSize: { xs: "30px", sm: "30px" }, fontWeight: 500 }}
           variant="h3"
         >
-          POLO T-SHIRTS
+          T-SHIRTS
         </Typography>
       </Box>
 
@@ -94,78 +95,77 @@ function MenStoreCT(props) {
     </div>
   );
 }
-
-export default MenStoreCT;
+export default MenStoreTS;
 const leftGrid = [
-  { header: "Brand", body: { title1: "Polo", title2: "Gucci" } },
-  { header: "Color", body: { title1: "white", title2: "grey" } },
+  { header: "Brand", body: { title1: "LV", title2: "Off White" } },
+  { header: "Color", body: { title1: "black", title2: "red" } },
   { header: "Price", body: { title1: "$0-$120", title2: "$120-$500" } },
 ];
 const cardContent = [
   {
-    id: 25,
-    img: "https://33000ft.com/cdn/shop/products/1_30845dc1-a210-4978-92d7-807c64824ecc.jpg?v=1673001510",
-    productName: "Men's UPF50+ Golf Polo Short Sleeve Collared",
+    id: 31,
+    img: "https://us.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-stripe-accent-monogram-t-shirt-obsoletes-do-not-touch--FOTS37TR1613_PM2_Front%20view.jpg",
+    productName: "Strip Accent Monogram T-Shirt",
     gender: "men",
     price: 145.0,
     priceCategory: "$120-$500",
-    brand: "Polo",
+    brand: "LV",
     size: 6.5,
-    color: "grey",
+    color: "black",
   },
   {
-    id: 26,
-    img: "https://media.endclothing.com/media/catalog/product/_/4/_408321-X7331-9060_m1_1.jpg",
-    productName: "Gucci GRG Collar Polo",
+    id: 32,
+    img: "https://dopestreet.co/wp-content/uploads/2021/04/Off-White-Airport-Tape-Baggage-Black-Tee-Back-600x600.jpg",
+    productName: "Off-White Seeing Things",
     gender: "men",
     price: 155.23,
     priceCategory: "$120-$500",
-    brand: "Gucci",
-    size: 7.0,
-    color: "white",
-  },
-  {
-    id: 27,
-    img: "https://www.code-zero.com/uploads/media/68/59/6f/1634566427/polo-shirt-men-performance-front-washed-grey.jpg",
-    productName: "Polo Shirt Men Performance",
-    gender: "men",
-    price: 145.0,
-    priceCategory: "$120-$500",
-    brand: "Polo",
-    size: 6.5,
-    color: "grey",
-  },
-  {
-    id: 28,
-    img: "https://bta.scene7.com/is/image/brownthomas/2000548003_01?$pdp_zoom$&$jpg$",
-    productName: "GUCCI Contrast Piquet Cotton Polo",
-    gender: "men",
-    price: 100,
-    priceCategory: "$0-$120",
-    brand: "Gucci",
+    brand: "Off White",
     size: 7.0,
     color: "black",
   },
   {
-    id: 29,
-    img: "https://i5.walmartimages.com/asr/feb5f348-ecba-447e-812a-7a4f6e01effc_1.469881b7ddd8ef62580c058aa72bbd24.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF",
-    productName: "Polo Authority Men's Tall Tech Pique",
+    id: 33,
+    img: "https://us.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-stripe-accent-monogram-t-shirt-obsoletes-do-not-touch--FOTS37TR1522_PM2_Front%20view.jpg",
+    productName: "Strip Accent Monogram T-Shirt",
+    gender: "men",
+    price: 145.0,
+    priceCategory: "$120-$500",
+    brand: "LV",
+    size: 6.5,
+    color: "red",
+  },
+  {
+    id: 34,
+    img: "https://www.mrporter.com/variants/images/1647597315003152/in/w2000_q60.jpg",
+    productName: "Logo-Print Cotton-Jersey T-Shirt",
+    gender: "men",
+    price: 100,
+    priceCategory: "$0-$120",
+    brand: "Off White",
+    size: 7.0,
+    color: "black",
+  },
+  {
+    id: 35,
+    img: "https://www.kickscrew.com/cdn/shop/products/main-square_3f80b21b-e725-4003-ad54-ad944d629028_540x.jpg?v=1695378342",
+    productName: "OFF-WHITEXChampion MENS",
     gender: "men",
     price: 345.5,
     priceCategory: "$120-$500",
-    brand: "Polo",
+    brand: "Off White",
     size: 6.5,
-    color: "grey",
+    color: "red",
   },
   {
-    id: 30,
-    img: "https://media.gucci.com/style/DarkGray_Center_0_0_490x490/1671476411/713997_XJETR_9088_001_100_0000_Light.jpg",
-    productName: "Gucci Cotton Jersey Polo",
+    id: 36,
+    img: "https://images.stockx.com/images/OFF-WHITE-Mona-Lisa-Longsleeve-T-Shirt-Red.png?fit=fill&bg=FFFFFF&w=480&h=320&fm=jpg&auto=compress&dpr=2&trim=color&updated_at=1615596479&q=60",
+    productName: "OFF-WHITE MONA LISA Longsleeve  ",
     gender: "men",
     price: 375,
     priceCategory: "$120-$500",
-    brand: "Gucci",
+    brand: "topMan",
     size: 6.5,
-    color: "white",
+    color: "grey",
   },
 ];

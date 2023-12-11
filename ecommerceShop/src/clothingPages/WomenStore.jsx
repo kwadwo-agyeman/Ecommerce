@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
-import Footer from "./components/Footer";
-import { Box, Typography } from "@mui/material";
-import Card from "./components/CardComponent";
-import LeftGrid from "./components/LeftGrid";
-import { useCart } from "./context/ShopContext";
+import React, { useEffect} from "react";
+import Card from "../components/CardComponent";
+import Footer from "../components/Footer";
+import { Box,Typography } from "@mui/material";
+import LeftGrid from "../components/LeftGrid";
 import "./menstore.css";
-function ChildrenStore(props) {
+import { useCart } from "../context/ShopContext";
+function WomenStore(props) {
   // Destructuring cartItems and addToCart from the useCart hook
   const { cartItems, addToCart } = useCart();
 
@@ -34,7 +34,7 @@ function ChildrenStore(props) {
           sx={{ mt: 7, fontSize: { xs: "30px", sm: "30px" }, fontWeight: 500 }}
           variant="h3"
         >
-          CHILDREN'S CLOTHING
+          WOMENS' CLOTHING
         </Typography>
       </Box>
 
@@ -95,144 +95,145 @@ function ChildrenStore(props) {
   );
 }
 
-export default ChildrenStore;
+export default WomenStore;
+
 const leftGrid = [
-  { header: "Brand", body: { title1: "Champion", title2: "nike" } },
+  { header: "Brand", body: { title1: "adidas", title2: "nike" } },
   { header: "Color", body: { title1: "black", title2: "grey" } },
   { header: "Price", body: { title1: "$0-$120", title2: "$120-$500" } },
 ];
 
 const cardContent = [
   {
-    id: 1,
-    img: "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/d424dabd-ca03-4c22-8b8f-038627000ed6/sportswear-little-kids-tracksuit-rNpcd6.png",
-    productName: "Nike Sportswear Kid's Woven",
-    gender: "children",
+    id: 43,
+    img: "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/c72539aa-6a0f-4b2c-a1ef-9ea300066637/sportswear-nike-united-oversized-woven-tracksuit-jacket-Jdgq8K.png",
+    productName: "Nike United Woven's Oversized Women",
+    gender: "women",
     price: 145.0,
     priceCategory: "$120-$500",
     brand: "nike",
     size: 6.5,
-    color: "red",
+    color: "green",
   },
   {
-    id: 2,
-    img: "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/2df89846-5360-4b89-a061-4bce0618a785/sportswear-big-kids-tracksuit-extended-size-G9cqCl.png",
-    productName: "Nike Sportswear Big Kid's Tracksuit",
-    gender: "children",
+    id: 44,
+    img: "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/93b961d8-0f46-4ddc-836c-dbeab3bbda27/dri-fit-academy-tracksuit-QjPCzf.png",
+    productName: "Nike Dri-FIT Academy Women's Tracksuit",
+    gender: "women",
     price: 155.23,
     priceCategory: "$120-$500",
     brand: "nike",
     size: 7.0,
-    color: "black",
+    color: "navyblue",
   },
   {
-    id: 3,
-    img: "https://jcpenney.scene7.com/is/image/JCPenney/DP0817202307192093M?hei=350&wid=350&op_usm=.4%2C.8%2C0%2C0&resmode=sharp2&op_sharpen=1",
-    productName: "Adidas Little boys",
-    gender: "children",
-    price: 89,
+    id: 45,
+    img: "https://cdna.lystit.com/400/500/tr/photos/zappos/5a34a791/adidas-originals-Black-Reflective-Tracksuit-Set.jpeg",
+    productName: "Adidas Originals Tracksuit",
+    gender: "women",
+    price: 109,
     priceCategory: "$0-$120",
     brand: "adidas",
-    size: 6.5,
-    color: "black",
-  },
-  {
-    id: 4,
-    img: "https://i8.amplience.net/t/jpl/jd_product_list?plu=jd_593214_plc&qlt=85&exclusive=0&qlt=92&wid=320&hei=408&v=1&fmt=auto",
-    productName: "adidas Originals adicolor Tracksuit",
-    gender: "children",
-    price: 100,
-    priceCategory: "$0-$120",
-    brand: "adidas",
-    size: 7.0,
-    color: "pink",
-  },
-  {
-    id: 5,
-    img: "https://cdn-e.webinterpret.com/wi-ebay-pictures/EBAY/34/03/83/383043616942_images.linnlive.com_b94fb775765eeb48af2dac8978535bda_6e290828-ffa1-407a-ad1f-2e48cc249ff5.jpeg",
-    productName: "Kid's Boys T-Shirt Shorts 100% Cotton",
-    gender: "children",
-    price: 245.5,
-    priceCategory: "$120-$500",
-    brand: "Champion",
     size: 6.5,
     color: "grey",
   },
   {
-    id: 6,
-    img: "https://slimages.macysassets.com/is/image/MCY/products/4/optimized/24022504_fpx.tif?$filterlrg$&wid=327",
-    productName: "Little Girl's Classic Tee and Practice Shorts",
-    gender: "children",
+    id: 46,
+    img: "https://i.pinimg.com/564x/14/af/bc/14afbcab52d50e2bc1e8108294a609e3.jpg",
+    productName: "adidas Originals adicolor Tracksuit",
+    gender: "women",
+    price: 100,
+    priceCategory: "$0-$120",
+    brand: "adidas",
+    size: 7.0,
+    color: "black",
+  },
+  {
+    id: 47,
+    img: "https://i.etsystatic.com/36958048/r/il/d30290/4775444731/il_fullxfull.4775444731_2r98.jpg",
+    productName: "Louis Vouitton Single-Breasted Wool",
+    gender: "women",
+    price: 445.5,
+    priceCategory: "$120-$500",
+    brand: "LV",
+    size: 6.5,
+    color: "black",
+  },
+  {
+    id: 48,
+    img: "https://cdn.shopify.com/s/files/1/1025/3059/products/WOMENS_TEAL_EDITED_830x1230_crop_center.jpg?v=1658280930",
+    productName: "Topwoman Suits Navy-blue",
+    gender: "women",
     price: 375,
     priceCategory: "$120-$500",
-    brand: "Champion",
+    brand: "topMan",
     size: 6.5,
-    color: "pink",
+    color: "navyblue",
   },
   {
-    id: 7,
-    img: "https://slimages.macysassets.com/is/image/MCY/products/5/optimized/24020815_fpx.tif?$filterlrg$&wid=327",
-    productName: "Champion Kids White Dandelion ",
-    gender: "children",
-    price: 245.75,
+    id: 49,
+    img: "https://www.bogliolimilano.com/dw/image/v2/AAGA_PRD/on/demandware.static/-/Sites-45/default/dw70e0f8f9/images/zoom/ZC0B95BGU07900276_0865_1.jpg?sw=1320&sh=1980&sm=fit",
+    productName: "Topman Skinny Single breasted Suit ",
+    gender: "women",
+    price: 345.75,
     priceCategory: "$120-$500",
-    brand: "Champion",
+    brand: "topMan",
     size: 7.0,
-    color: "white",
+    color: "grey",
   },
   {
-    id: 8,
-    img: "https://www.cosmossport.cy/2348344-product_medium/champion-crewneck-t-shirt.jpg",
-    productName: "Champion Little Girl's Tee and Practice Shorts",
-    gender: "children",
-    price: 205.5,
+    id: 50,
+    img: "https://italydirectclothing.com/cdn/shop/products/Bel-Lite-Grey_pic1-745x1113_1200x1200.jpg?v=1594395751",
+    productName: "Louis Vouitton Single-Breasted Midnight Grey Suit",
+    gender: "women",
+    price: 305.5,
     priceCategory: "$120-$500",
-    brand: "champion",
+    brand: "LV",
     size: 6.5,
-    color: "violet",
+    color: "grey",
   },
   {
-    id: 9,
-    img: "https://popees.com/pub/media/catalog/product/cache/af5dcf3eb6b1e232451daa6282834a44/p/r/product-size_shirt.jpg",
-    productName: "Printed Half Sleeve Shirt",
-    gender: "children",
+    id: 51,
+    img: "https://media.boohoo.com/i/boohoo/azz37087_black_xl?w=537&qlt=default&fmt.jp2.qlt=70&fmt=auto&sm=fit",
+    productName: "Black Suit Spaghetti Strap Bodysuit",
+    gender: "women",
     price: 115.34,
     priceCategory: "$0-$120",
     brand: "adidas",
     size: 7.0,
-    color: "white",
+    color: "black",
   },
   {
-    id: 10,
-    img: "https://target.scene7.com/is/image/Target/GUEST_ba79ffa2-6093-4215-b13b-86a7930507b8?wid=488&hei=488&fmt=pjpeg",
-    productName: "Tolder Boy's Long Sleeve Shirt and Pants",
-    gender: "children",
+    id: 52,
+    img: "https://n.nordstrommedia.com/id/sr3/7cf24fa7-b8b0-4488-9994-df4a97464e6a.jpeg?h=365&w=240&dpr=2",
+    productName: "Nike Pull&Bear Black Bodysuit",
+    gender: "men",
     price: 105.05,
     priceCategory: "$0-$120",
-    brand: "fty",
+    brand: "nike",
     size: 6.5,
-    color: "other",
+    color: "black",
   },
   {
-    id: 11,
-    img: "https://i.ebayimg.com/images/g/EKsAAOSw7-VjpJT4/s-l1200.webp",
-    productName: "Boy's Button Down Red Long Sleeve",
-    gender: "children",
+    id: 53,
+    img: "https://media.boohoo.com/i/boohoo/dzz21574_black_xl/female-black-short-sleeve-bodysuit/?w=900&qlt=default&fmt.jp2.qlt=70&fmt=auto&sm=fit",
+    productName: "Adidas Black Overdye Bodysuit",
+    gender: "men",
     price: 185,
     priceCategory: "$120-$500",
-    brand: "LV",
+    brand: "adidas",
     size: 6.5,
-    color: "red",
+    color: "black",
   },
   {
-    id: 12,
-    img: "https://rukminim2.flixcart.com/image/850/1000/kmxsakw0/shirt/p/p/h/2-3-years-fksh5464-fm-kids-original-imagfqbkdmpmqng4.jpeg?q=90",
-    productName: "FM KIDS Boys Checkered Casual",
-    gender: "children",
+    id: 54,
+    img: "https://n.nordstrommedia.com/id/sr3/03384fd3-9ccd-4ad8-b70a-fee494f8941d.jpeg?h=365&w=240&dpr=2",
+    productName: "Adidas Grey Bodysuits Oxford Street Style",
+    gender: "men",
     price: 95,
     priceCategory: "$0-$120",
-    brand: "LV",
+    brand: "adidas",
     size: 7,
-    color: "other",
+    color: "grey",
   },
 ];

@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
-import Card from "./components/CardComponent";
-import Footer from "./components/Footer";
+import Card from "../components/CardComponent";
+import Footer from "../components/Footer";
 import { Box, Typography } from "@mui/material";
-import LeftGrid from "./components/LeftGrid";
-import "./menstore.css";
-import { useCart } from "./context/ShopContext";
+import LeftGrid from "../components/LeftGrid";
+import "../clothingPages/menstore.css";
+import { useCart } from "../context/ShopContext";
 
-function WomenT(props) {
+function MenStoreCB(props) {
   // Destructuring values from the useCart hook
   const { cartItems, addToCart } = useCart();
 
@@ -41,7 +41,7 @@ function WomenT(props) {
           }}
           variant="h3"
         >
-          TUNICS
+          CASUAL BOOTS
         </Typography>
       </Box>
 
@@ -96,78 +96,78 @@ function WomenT(props) {
     </div>
   );
 }
-export default WomenT;
+export default MenStoreCB;
 
 const leftGrid = [
-  { header: "Brand", body: { title1: "Zara", title2: "Forever21" } },
-  { header: "Color", body: { title1: "black", title2: "navyblue" } },
+  { header: "Brand", body: { title1: "Avalanche", title2: "Ferragamo" } },
+  { header: "Color", body: { title1: "brown", title2: "white" } },
   { header: "Price", body: { title1: "$0-$120", title2: "$120-$500" } },
 ];
 const cardContent = [
   {
-    id: 55,
-    img: "https://www.forever21.com/dw/image/v2/BFKH_PRD/on/demandware.static/-/Sites-f21-master-catalog/default/dw54ad60ea/1_front_750/00494939-01.jpg?sw=300&sh=450",
-    productName: "Black Women's Satin Tunic",
-    gender: "women",
+    id: 85,
+    img: "https://target.scene7.com/is/image/Target/GUEST_c323096f-07c1-409f-a928-ce38d22389e0?wid=488&hei=488&fmt=pjpeg",
+    productName: "Avalanche Men's Casual Boots ",
+    gender: "men",
     price: 145.0,
     priceCategory: "$120-$500",
-    brand: "Forever21",
+    brand: "Avanlanche",
     size: 6.5,
-    color: "black",
+    color: "brown",
   },
   {
-    id: 56,
-    img: "https://liveunlimitedlondon.com/cdn/shop/products/LU1243_H_e31e577a-2f6e-4b3d-8835-72bc4458bb61_800x.jpg?v=1579700240",
-    productName: "Jersey Satin Mix Tunic",
-    gender: "women",
+    id: 86,
+    img: "https://target.scene7.com/is/image/Target/GUEST_4cbd3501-ec54-47aa-9933-057efd91896b?wid=488&hei=488&fmt=pjpeg",
+    productName: "Avalanche Men's Casual Boots",
+    gender: "men",
     price: 155.23,
     priceCategory: "$120-$500",
-    brand: "Forever21",
+    brand: "Avalanche",
+    size: 7.0,
+    color: "brown",
+  },
+  {
+    id: 87,
+    img: "https://cdna.lystit.com/400/500/tr/photos/arenamenswear/487a0af2/timberland--Newmarket-2-Rugged-Boot.jpeg",
+    productName: "Timberland Black Casual Boots",
+    gender: "men",
+    price: 145.0,
+    priceCategory: "$120-$500",
+    brand: "Timberland",
+    size: 6.5,
+    color: "black",
+  },
+  {
+    id: 88,
+    img: "https://n.nordstrommedia.com/id/sr3/af5b3656-2110-4c8d-9bfd-04a059b9ca65.jpeg?h=365&w=240&dpr=2",
+    productName: "Timberland Highway Casual Boots",
+    gender: "men",
+    price: 100,
+    priceCategory: "$0-$120",
+    brand: "Timberland",
     size: 7.0,
     color: "black",
   },
   {
-    id: 57,
-    img: "https://www.citychic.com.au/media/catalog/product/cache/1ef7fa863667a87bb19a34a82f4d98f0/210807NAVY-11.jpg",
-    productName: "Zara Tunic Navy Blue Size 6",
-    gender: "women",
-    price: 145.0,
-    priceCategory: "$120-$500",
-    brand: "Zara",
-    size: 6.5,
-    color: "navyblue",
-  },
-  {
-    id: 58,
-    img: "https://di2ponv0v5otw.cloudfront.net/posts/2022/05/14/627f9310da10419adb456e81/m_627f9310da10419adb456e82.jpg",
-    productName: "Elegance in Bloom Blouse",
-    gender: "women",
-    price: 100,
-    priceCategory: "$0-$120",
-    brand: "H&M",
-    size: 7.0,
-    color: "other",
-  },
-  {
-    id: 59,
-    img: "https://static.zara.net/photos///2023/V/0/7/p/6795/101/250/2/w/824/6795101250_1_1_1.jpg?ts=1679048033138",
-    productName: "Women's Long Sleeve Loose Button-down Shirt",
-    gender: "women",
+    id: 89,
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmIdeRd3fJWF2H2oOd_IQOrecXAZVdj3vMRAVLJ_IELb5EAQl5kH6s5H8TdROyhHXaP8o&usqp=CAU",
+    productName: "Timberland Ferragamo Casual Boots",
+    gender: "men",
     price: 345.5,
     priceCategory: "$120-$500",
-    brand: "Zara",
+    brand: "Timberland",
     size: 6.5,
-    color: "other",
+    color: "black",
   },
   {
-    id: 60,
-    img: "https://iconoflash.com/cdn/shop/products/TU012_NAV_1024x.jpg?v=1611164748",
-    productName: "Boxy Vicose Tunic Forever 21",
-    gender: "women",
+    id: 90,
+    img: "https://www.jiomart.com/images/product/original/rvh3y1fvhg/red-chief-men-s-rust-leather-boots-product-images-rvh3y1fvhg-2-202210062011.jpg?im=Resize=(1000,1000)",
+    productName: "Viz Runner Repeat",
+    gender: "men",
     price: 375,
     priceCategory: "$120-$500",
-    brand: "Forever21",
+    brand: "Avalanche",
     size: 6.5,
-    color: "navyblue",
+    color: "brown",
   },
 ];

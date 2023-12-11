@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
-import Card from "./components/CardComponent";
-import Footer from "./components/Footer";
+import Card from "../components/CardComponent";
+import Footer from "../components/Footer";
 import { Box, Typography } from "@mui/material";
-import LeftGrid from "./components/LeftGrid";
-import "./menstore.css";
-import { useCart } from "./context/ShopContext";
+import LeftGrid from "../components/LeftGrid";
+import "../clothingPages/menstore.css";
+import { useCart } from "../context/ShopContext";
 
-function ChildrenStoreS(props) {
+function MenStoreAS(props) {
   // Destructuring values from the useCart hook
   const { cartItems, addToCart } = useCart();
 
@@ -41,7 +41,7 @@ function ChildrenStoreS(props) {
           }}
           variant="h3"
         >
-          SHIRTS
+          ATHLETIC SHOES
         </Typography>
       </Box>
 
@@ -96,77 +96,77 @@ function ChildrenStoreS(props) {
     </div>
   );
 }
-export default ChildrenStoreS;
+export default MenStoreAS;
 
 const leftGrid = [
-  { header: "Brand", body: { title1: "Zara", title2: "FTY" } },
-  { header: "Color", body: { title1: "blue", title2: "white" } },
+  { header: "Brand", body: { title1: "Puma", title2: "Ferragamo" } },
+  { header: "Color", body: { title1: "black", title2: "white" } },
   { header: "Price", body: { title1: "$0-$120", title2: "$120-$500" } },
 ];
 const cardContent = [
   {
-    id: 67,
-    img: "https://i5.walmartimages.com/seo/Boys-Light-Blue-Short-Sleeve-Polo-Shirt-Size-4-Case-of-36_f7907ba0-2f58-430e-9a2e-95e2ec8a04a6.a7a7ad1902715f118827df5e7f8d9fb8.jpeg",
-    productName: "Blue Duffy Boys Shirt",
-    gender: "children",
+    id: 79,
+    img: "https://ae01.alicdn.com/kf/S98ee92ffef5449a9a8c672eefcf23555y/Men-s-Sneakers-Li-ning-VIP-joint-sports-shoes-the-new-2022-warm-wet-shoes-winter.jpg",
+    productName: "Men's Brown Shoe ",
+    gender: "men",
     price: 145.0,
     priceCategory: "$120-$500",
-    brand: "Zara",
+    brand: "Prada",
     size: 6.5,
-    color: "blue",
+    color: "brown",
   },
   {
-    id: 68,
-    img: "https://ae01.alicdn.com/kf/H2fb9cedf70e3417fba4cebbd147cc6473.jpg_640x640Q90.jpg_.webp",
-    productName: "Butterfly Chrome Style Shirt",
-    gender: "children",
+    id: 80,
+    img: "https://img.kwcdn.com/product/Fancyalgo/VirtualModelMatting/66c8a63097b5aeabc6003cb0d3958996.jpg?imageMogr2/auto-orient%7CimageView2/2/w/800/q/70/format/webp",
+    productName: "Nike Air Max Pre-Day",
+    gender: "men",
     price: 155.23,
     priceCategory: "$120-$500",
-    brand: "FTY",
+    brand: "Nike",
     size: 7.0,
-    color: "white",
+    color: "other",
   },
   {
-    id: 69,
-    img: "https://asset1.cxnmarksandspencer.com/is/image/mands/SD_04_T87_2448I_E0_X_EC_0?wid=1024&qlt=80",
-    productName: "Zara Polo Shirt Kids",
-    gender: "children",
+    id: 81,
+    img: "https://img.kwcdn.com/product/1e19d463b64/bd6101c4-4da0-42a6-bc9e-66697f1cabe1_800x800.png",
+    productName: "Men's Ferragamo Shoe",
+    gender: "men",
     price: 145.0,
     priceCategory: "$120-$500",
-    brand: "Zara",
+    brand: "Ferragamo",
     size: 6.5,
-    color: "blue",
+    color: "black",
   },
   {
-    id: 70,
-    img: "https://cdn.mall.adeptmind.ai/https%3A%2F%2Flp2.hm.com%2Fhmgoepprod%3Fset%3Dquality%255B79%255D%252Csource%255B%252F1a%252F92%252F1a92b4ecd845410d389715282ab9217dddc9c411.jpg%255D%252Corigin%255Bdam%255D%252Ccategory%255B%255D%252Ctype%255BLOOKBOOK%255D%252Cres%255Bm%255D%252Chmver%255B1%255D%26call%3Durl%255Bfile%3A%2Fproduct%2Fmain%255D_640x.webp",
-    productName: "Elegance in Bloom Shirt",
-    gender: "children",
+    id: 82,
+    img: "https://i5.walmartimages.com/asr/5c4f9140-876d-40db-9cd7-95aa15578e23.79e2e623bc73f292c27c0f6c1bcb696f.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF",
+    productName: "Nike Air Max Phantom",
+    gender: "men",
     price: 100,
     priceCategory: "$0-$120",
-    brand: "H&M",
+    brand: "Nike",
     size: 7.0,
-    color: "white",
+    color: "other",
   },
   {
-    id: 71,
-    img: "https://target.scene7.com/is/image/Target/GUEST_47e07e21-f3b4-46bf-a7dd-16d657e05663?wid=488&hei=488&fmt=pjpeg",
-    productName: "Children's Bloom Shirt Boys",
-    gender: "children",
+    id: 83,
+    img: "https://i5.walmartimages.com/asr/88a9543e-a4f8-4691-b001-b2025106f0d9.4749316e2d3ac06249e1622dd7db2252.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF",
+    productName: "Salvatore Ferragamo Loafers",
+    gender: "men",
     price: 345.5,
     priceCategory: "$120-$500",
-    brand: "Zara",
+    brand: "Ferragamo",
     size: 6.5,
-    color: "blue",
+    color: "black",
   },
   {
-    id: 72,
-    img: "https://target.scene7.com/is/image/Target/GUEST_1c591735-9c9a-4ab5-a1c3-4daaa9491ac9?wid=488&hei=488&fmt=pjpeg",
-    productName: "Boxy Vicose Collared Shirt FTY 21",
-    gender: "children",
+    id: 84,
+    img: "https://i5.walmartimages.com/asr/5cf9b02e-1e88-497e-87c4-9e112f2349b3.2e898b6e2295da09c871fc2df7c35762.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF",
+    productName: "Viz Runner Repeat",
+    gender: "men",
     price: 375,
     priceCategory: "$120-$500",
-    brand: "FTY",
+    brand: "Puma",
     size: 6.5,
     color: "white",
   },

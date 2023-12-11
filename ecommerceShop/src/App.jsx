@@ -2,17 +2,24 @@ import React, { useEffect, useState } from "react";
 import { Route } from "react-router-dom";
 import { Routes } from "react-router-dom";
 import Home from "./Home";
-import MenStore from "./MenStore";
-import MenStoreTS from "./MenStoreTS";
-import MenStoreCT from "./MenstoreCT";
-import WomenStore from "./WomenStore";
-import WomenB from "./WomenB";
-import WomenT from "./WomenT";
 import Navbar from "./components/Navbar/Navbar";
 import { CartProvider } from "./context/ShopContext";
-import ChildrenStore from "./ChildrenStore";
-import ChildrenStoreD from "./ChildrenStoreD";
-import ChildrenStoreS from "./ChildrenStoreS";
+///Clothing Pages
+import MenStore from "./clothingPages/MenStore";
+import MenStoreTS from "./clothingPages/MenStoreTS";
+import MenStoreCT from "./clothingPages/MenstoreCT";
+import WomenStore from "./clothingPages/WomenStore";
+import WomenB from "./clothingPages/WomenB";
+import WomenT from "./clothingPages/WomenT";
+import ChildrenStore from "./clothingPages/ChildrenStore";
+import ChildrenStoreD from "./clothingPages/ChildrenStoreD";
+import ChildrenStoreS from "./clothingPages/ChildrenStoreS";
+//Shoe Pages
+import MenStoreShoe from "./shoePages/MenStoreShoe";
+import MenStoreAS from "./shoePages/MenStoreAS";
+import MenStoreCB from "./shoePages/MenStoreCB";
+import WomenStoreH from "./shoePages/WomenStoreH";
+import WomenStoreShoe from "./shoePages/WomenStoreShoe";
 function App() {
   // State to manage the array of cards
   const [cardArr, setCardArr] = useState([]);
@@ -161,6 +168,66 @@ function App() {
             path="/childrenStoreS"
             element={
               <ChildrenStoreS
+                inspectCategory={inspectCategory}
+                toggleMenuHeight={toggleMenuHeight}
+                cardArr={cardArr}
+                filterCardContent={filterCardContent}
+              />
+            }
+          />
+
+          <Route
+            path="/menStoreShoe"
+            element={
+              <MenStoreShoe
+                inspectCategory={inspectCategory}
+                toggleMenuHeight={toggleMenuHeight}
+                cardArr={cardArr}
+                filterCardContent={filterCardContent}
+              />
+            }
+          />
+
+          <Route
+            path="/menStoreAS"
+            element={
+              <MenStoreAS
+                inspectCategory={inspectCategory}
+                toggleMenuHeight={toggleMenuHeight}
+                cardArr={cardArr}
+                filterCardContent={filterCardContent}
+              />
+            }
+          />
+
+          <Route
+            path="/menStoreCB"
+            element={
+              <MenStoreCB
+                inspectCategory={inspectCategory}
+                toggleMenuHeight={toggleMenuHeight}
+                cardArr={cardArr}
+                filterCardContent={filterCardContent}
+              />
+            }
+          />
+
+          <Route
+            path="/womenStoreH"
+            element={
+              <WomenStoreH
+                inspectCategory={inspectCategory}
+                toggleMenuHeight={toggleMenuHeight}
+                cardArr={cardArr}
+                filterCardContent={filterCardContent}
+              />
+            }
+          />
+
+          <Route
+            path="/womenStoreShoe"
+            element={
+              <WomenStoreShoe
                 inspectCategory={inspectCategory}
                 toggleMenuHeight={toggleMenuHeight}
                 cardArr={cardArr}

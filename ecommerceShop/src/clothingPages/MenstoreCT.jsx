@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
-import Card from "./components/CardComponent";
-import Footer from "./components/Footer";
+import Card from "../components/CardComponent";
+import Footer from "../components/Footer";
 import { Box, Typography } from "@mui/material";
-import LeftGrid from "./components/LeftGrid";
-import { useCart } from "./context/ShopContext";
+import LeftGrid from "../components/LeftGrid";
 import "./menstore.css";
-function WomenB(props) {
+import { useCart } from "../context/ShopContext";
+function MenStoreCT(props) {
   // Destructuring cartItems and addToCart from the useCart hook
   const { cartItems, addToCart } = useCart();
 
@@ -34,7 +34,7 @@ function WomenB(props) {
           sx={{ mt: 7, fontSize: { xs: "30px", sm: "30px" }, fontWeight: 500 }}
           variant="h3"
         >
-          BLOUSES
+          POLO T-SHIRTS
         </Typography>
       </Box>
 
@@ -95,78 +95,77 @@ function WomenB(props) {
   );
 }
 
-export default WomenB;
-
+export default MenStoreCT;
 const leftGrid = [
-  { header: "Brand", body: { title1: "Zara", title2: "H&M" } },
-  { header: "Color", body: { title1: "green", title2: "yellow" } },
+  { header: "Brand", body: { title1: "Polo", title2: "Gucci" } },
+  { header: "Color", body: { title1: "white", title2: "grey" } },
   { header: "Price", body: { title1: "$0-$120", title2: "$120-$500" } },
 ];
 const cardContent = [
   {
-    id: 37,
-    img: "https://images.stylight.net/image/upload/t_web_product_330x440max_nobg/q_auto:eco,f_auto/cjdk0hnsa3iadetuctrf.webp",
-    productName: "Green Women's Satin Blouse",
-    gender: "women",
+    id: 25,
+    img: "https://33000ft.com/cdn/shop/products/1_30845dc1-a210-4978-92d7-807c64824ecc.jpg?v=1673001510",
+    productName: "Men's UPF50+ Golf Polo Short Sleeve Collared",
+    gender: "men",
     price: 145.0,
     priceCategory: "$120-$500",
-    brand: "Zara",
+    brand: "Polo",
     size: 6.5,
-    color: "green",
+    color: "grey",
   },
   {
-    id: 38,
-    img: "https://cdn.mall.adeptmind.ai/https%3A%2F%2Flp2.hm.com%2Fhmgoepprod%3Fset%3Dquality%255B79%255D%252Csource%255B%252F0a%252F5c%252F0a5c03d6340c6ee8e56f01e4fe85f4522280a10c.jpg%255D%252Corigin%255Bdam%255D%252Ccategory%255B%255D%252Ctype%255BLOOKBOOK%255D%252Cres%255Bm%255D%252Chmver%255B1%255D%26call%3Durl%255Bfile%3A%2Fproduct%2Fmain%255D_large.webp",
-    productName: "H&M Boxy Vicose Blouse",
-    gender: "women",
+    id: 26,
+    img: "https://media.endclothing.com/media/catalog/product/_/4/_408321-X7331-9060_m1_1.jpg",
+    productName: "Gucci GRG Collar Polo",
+    gender: "men",
     price: 155.23,
     priceCategory: "$120-$500",
-    brand: "H&M",
+    brand: "Gucci",
     size: 7.0,
-    color: "green",
+    color: "white",
   },
   {
-    id: 39,
-    img: "https://images.vestiairecollective.com/cdn-cgi/image/w=1246,q=70,f=auto,/produit/yellow-not-specified-zara-top-26942165-2_1.jpg",
-    productName: "Zara Blouse Yellow Size 6",
-    gender: "women",
+    id: 27,
+    img: "https://www.code-zero.com/uploads/media/68/59/6f/1634566427/polo-shirt-men-performance-front-washed-grey.jpg",
+    productName: "Polo Shirt Men Performance",
+    gender: "men",
     price: 145.0,
     priceCategory: "$120-$500",
-    brand: "Zara",
+    brand: "Polo",
     size: 6.5,
-    color: "yellow",
+    color: "grey",
   },
   {
-    id: 40,
-    img: "https://cdna.lystit.com/photos/hm/46e26bdd/hm-Black-Blouse.jpeg",
-    productName: "Elegance in Bloom Blouse",
-    gender: "women",
+    id: 28,
+    img: "https://bta.scene7.com/is/image/brownthomas/2000548003_01?$pdp_zoom$&$jpg$",
+    productName: "GUCCI Contrast Piquet Cotton Polo",
+    gender: "men",
     price: 100,
     priceCategory: "$0-$120",
-    brand: "H&M",
+    brand: "Gucci",
     size: 7.0,
     color: "black",
   },
   {
-    id: 41,
-    img: "https://target.scene7.com/is/image/Target/GUEST_6c7a86de-526c-426f-94a6-5f1270e032bc?wid=488&hei=488&fmt=pjpeg",
-    productName: "Women's Long Sleeve Loose Button-down Shirt",
-    gender: "women",
+    id: 29,
+    img: "https://i5.walmartimages.com/asr/feb5f348-ecba-447e-812a-7a4f6e01effc_1.469881b7ddd8ef62580c058aa72bbd24.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF",
+    productName: "Polo Authority Men's Tall Tech Pique",
+    gender: "men",
     price: 345.5,
     priceCategory: "$120-$500",
-    brand: "Zara",
+    brand: "Polo",
     size: 6.5,
-    color: "yellow",
+    color: "grey",
   },
   {
-    id: 42,
-    img: "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2F8c%2Ff6%2F8cf6d32420f81d791b98c74e0bcf4c2b2cef2af1.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BLOOKBOOK%5D%2Cres%5Bm%5D%2Chmver%5B1%5D&call=url[file:/product/main]",
-    productName: "Boxy Vicose Blouse H&M",
-    gender: "women",
+    id: 30,
+    img: "https://media.gucci.com/style/DarkGray_Center_0_0_490x490/1671476411/713997_XJETR_9088_001_100_0000_Light.jpg",
+    productName: "Gucci Cotton Jersey Polo",
+    gender: "men",
     price: 375,
     priceCategory: "$120-$500",
-    brand: "H&M",
+    brand: "Gucci",
     size: 6.5,
-    color: "green",
+    color: "white",
   },
 ];
