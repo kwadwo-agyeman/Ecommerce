@@ -20,6 +20,8 @@ import MenStoreAS from "./shoePages/MenStoreAS";
 import MenStoreCB from "./shoePages/MenStoreCB";
 import WomenStoreH from "./shoePages/WomenStoreH";
 import WomenStoreShoe from "./shoePages/WomenStoreShoe";
+import WomenStoreSn from "./shoePages/WomenStoreSn";
+import ChildrenStoreShoe from "./shoePages/ChildrenStoreShoe";
 function App() {
   // State to manage the array of cards
   const [cardArr, setCardArr] = useState([]);
@@ -228,6 +230,30 @@ function App() {
             path="/womenStoreShoe"
             element={
               <WomenStoreShoe
+                inspectCategory={inspectCategory}
+                toggleMenuHeight={toggleMenuHeight}
+                cardArr={cardArr}
+                filterCardContent={filterCardContent}
+              />
+            }
+          />
+
+          <Route
+            path="/womenStoreSn"
+            element={
+              <WomenStoreSn
+                inspectCategory={inspectCategory}
+                toggleMenuHeight={toggleMenuHeight}
+                cardArr={cardArr}
+                filterCardContent={filterCardContent}
+              />
+            }
+          />
+
+          <Route
+            path="/childrenStoreShoe"
+            element={
+              <ChildrenStoreShoe
                 inspectCategory={inspectCategory}
                 toggleMenuHeight={toggleMenuHeight}
                 cardArr={cardArr}

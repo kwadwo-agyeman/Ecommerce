@@ -89,7 +89,7 @@ const navSmallData = [
       children: ["All Category", "Dress", "Shirts"],
     },
     links: {
-      women: ["/womenStore", "/women", "/womenStoreH"],
+      women: ["/womenStoreShoe", "/womenStoreSn", "/womenStoreH"],
       men: ["/menStoreShoe", "/menStoreAS", "/menStoreCB"],
       children: ["/childrenStore", "/childrenStoreD", "/childrenStoreS"],
     },

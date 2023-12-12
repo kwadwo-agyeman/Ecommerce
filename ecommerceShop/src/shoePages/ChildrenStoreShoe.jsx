@@ -6,7 +6,7 @@ import LeftGrid from "../components/LeftGrid";
 import "../clothingPages/menstore.css";
 import { useCart } from "../context/ShopContext";
 
-function WomenStoreShoe(props) {
+function ChildrenStoreShoe(props) {
   // Destructuring values from the useCart hook
   const { cartItems, addToCart } = useCart();
 
@@ -41,7 +41,7 @@ function WomenStoreShoe(props) {
           }}
           variant="h3"
         >
-          WOMEN'S SHOES
+          CHILDREN'S SHOES
         </Typography>
       </Box>
 
@@ -96,77 +96,77 @@ function WomenStoreShoe(props) {
     </div>
   );
 }
-export default WomenStoreShoe;
+export default ChildrenStoreShoe;
 
 const leftGrid = [
-  { header: "Brand", body: { title1: "Jimmy Choo", title2: "Christian Louboutin" } },
+  { header: "Brand", body: { title1: "Puma", title2: "Adidas" } },
   { header: "Color", body: { title1: "white", title2: "black" } },
   { header: "Price", body: { title1: "$0-$120", title2: "$120-$500" } },
 ];
 const cardContent = [
     {
-      id: 97,
-      img: "https://i5.walmartimages.com/seo/CAICJ98-Womens-Shoes-Women-s-Canvas-White-Shoes-Classic-Fashion-Low-Cut-Loafer-Sneakers-Hot-Pink_9e11f070-6dc2-4ef3-9001-945e31bfc1b9.5592975b9caf7a54cc95691ac3177da5.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF",
-      productName: "Jimmy Choo Stylish Women's Shoe",
-      gender: "women",
+      id: 109,
+      img: "https://www.mrporter.com/variants/images/42247633208420946/in/w2000_q60.jpg",
+      productName: "Puma Stylish Childern's Shoe",
+      gender: "childern",
       price: 145.0,
       priceCategory: "$120-$500",
-      brand: "Jimmy Choo",
+      brand: "Puma",
       size: 6.5,
-      color: "black",
+      color: "white",
     },
     {
-      id: 98,
-      img: "https://ae01.alicdn.com/kf/Sea2d7c413735423cbb2c22bc8de86f28U/Woman-s-Shoes-Pointed-Toe-Boat-Shoes-Metal-Chain-Stilettos-Designer-Shoes-Hig-Heels-Pumps-Female.jpg",
-      productName: "Christian Louboutin Elegant Black Shiny Pumps",
+      id: 110,
+      img: "https://ae01.alicdn.com/kf/S786b26b6c2b44a9db0495c796d8d98c94/Classic-white-shoes-unlimited-season-children-s-white-sports-shoes-ultralight-children-s-shoes-shoes-for.jpg",
+      productName: "Adidas Elegant Black Shiny Pumps",
       gender: "women",
       price: 155.23,
       priceCategory: "$120-$500",
-      brand: "Christian Louboutin",
-      size: 7.0,
-      color: "black",
-    },
-    {
-      id: 99,
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbl9bnU1SaoaJolJ2tSwGWACGsu-E0D5yMTSUgDGCS0sZdrvo-cx4TWl_jXSOpSyNEPi8&usqp=CAU",
-      productName: "Jimmy Choo Chic Women's Casual Boots",
-      gender: "women",
-      price: 145.0,
-      priceCategory: "$120-$500",
-      brand: "Jimmy Choo",
-      size: 6.5,
-      color: "pink",
-    },
-    {
-      id: 100,
-      img: "https://m.media-amazon.com/images/I/61CSW46aLpL._AC_UF350,350_QL80_.jpg",
-      productName: "Jimmy Choo Classic Women's Casual Heels",
-      gender: "women",
-      price: 100,
-      priceCategory: "$0-$120",
-      brand: "Jimmy Choo",
+      brand: "Adidas",
       size: 7.0,
       color: "white",
     },
     {
-      id: 101,
-      img: "https://i5.walmartimages.com/seo/Aayomet-Woven-Shoes-Women-Ladies-Fashion-Solid-Color-Breathable-Leather-Bow-Decorated-Flat-Casual-Single-Shoes-Black-8-5_b12d4fa6-7f50-4b1b-90b4-48110ab4aa57.08a6cc248db0fd9e1f01aa43669e08c0.jpeg",
-      productName: "Christian Louboutin Fashionable Black Loafrs",
+      id: 111,
+      img: "https://www.jiomart.com/images/product/original/rv6toxnydv/campus-cs-64vs-white-men-s-school-shoes-product-images-rv6toxnydv-1-202209062227.jpg?im=Resize=(500,630)",
+      productName: "Puma Chic Women's Casual Boots",
       gender: "women",
-      price: 345.5,
+      price: 145.0,
       priceCategory: "$120-$500",
-      brand: "Christian Louboutin",
+      brand: "Puma",
       size: 6.5,
       color: "black",
     },
     {
-      id: 102,
-      img: "https://ae01.alicdn.com/kf/S1e46e13b58be4e34934f753cf5898ddfK.jpg_640x640Q90.jpg_.webp",
-      productName: "Jimmy Choo Avalanche Women's Black Heels",
-      gender: "women",
+      id: 112,
+      img: "https://i5.walmartimages.com/seo/Final-Clear-Out-Girls-Low-Heeled-Princess-Leather-Shoes-For-Wedding-Party-Dance-Children-Glitter-Butterfly-Shoes-Kids-Flower-Mary-Jane-2-13Y_00110a9a-dd34-4f5f-878e-73cb058ec322.45e7238c99d2ee6a8d183d0dcc031402.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF",
+      productName: "Puma Classic Women's Casual Sneakers",
+      gender: "children",
+      price: 100,
+      priceCategory: "$0-$120",
+      brand: "Puma",
+      size: 7.0,
+      color: "white",
+    },
+    {
+      id: 115,
+      img: "https://www.kaileep.com/cdn/shop/files/92B78CBC-551C-44D3-BCA4-5FA9AE8E8F25_1024x1024.jpg?v=1683903798",
+      productName: "Adidas Fashionable Loafers",
+      gender: "children",
+      price: 345.5,
+      priceCategory: "$120-$500",
+      brand: "Adidas",
+      size: 6.5,
+      color: "black",
+    },
+    {
+      id: 116,
+      img: "https://target.scene7.com/is/image/Target/GUEST_a9333731-8360-4516-b78f-fba87b37eb21",
+      productName: "Puma Avalanche Children's Shoe",
+      gender: "children",
       price: 375,
       priceCategory: "$120-$500",
-      brand: "Jimmy Choo",
+      brand: "Puma",
       size: 6.5,
       color: "white",
     },

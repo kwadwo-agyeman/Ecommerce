@@ -43,7 +43,14 @@ function Shoes(props) {
                     All Category
                   </Link>
                 </li>
-                <li>Sneakers</li>
+                <li>
+                  <Link
+                    to="/womenStoreSn"
+                    style={{ textDecoration: "none", color: "black" }}
+                  >
+                    Sneakers
+                  </Link>
+                </li>
                 <li>
                   <Link
                     to="/womenStoreH"
@@ -100,9 +107,16 @@ function Shoes(props) {
             </Typography>
             <section>
               <ul>
-                <li>All Category</li>
-                <li>School Shoes</li>
-                <li>Sports Shoes</li>
+              <li>
+                  <Link
+                    to="/childrenStoreShoe"
+                    style={{ textDecoration: "none", color: "black" }}
+                  >
+                    All Category
+                  </Link>
+                </li>
+                <li></li>
+                <li></li>
               </ul>
             </section>
           </article>

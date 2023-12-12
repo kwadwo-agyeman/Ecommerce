@@ -237,7 +237,7 @@ function Navbar() {
                 {/* Cart icon with total quantity badge */}
                 <Box onClick={handleOpen}>
                   <Badge badgeContent={calculateTotalQuantity()} color="error">
-                    <ShoppingBag />
+                    <ShoppingBag sx={{cursor:"pointer"}} />
                   </Badge>
                 </Box>
               </Navlinks>

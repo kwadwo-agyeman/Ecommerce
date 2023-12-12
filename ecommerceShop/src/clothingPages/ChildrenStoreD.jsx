@@ -129,7 +129,7 @@ const cardContent = [
   {
     id: 63,
     img: "https://ae01.alicdn.com/kf/HTB1i0tKXMDD8KJjy0Fdq6AjvXXa1.jpg_640x640Q90.jpg_.webp",
-    productName: "",
+    productName: "Butterfly Chrome Style Dress",
     gender: "children",
     price: 145.0,
     priceCategory: "$120-$500",
