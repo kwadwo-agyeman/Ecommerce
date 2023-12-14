@@ -85,6 +85,12 @@ function Navbar() {
     useCart();
   const [navSmallMenu, setNavSmallMenu] = useState(false);
   const [open, setOpen] = React.useState(false);
+  //
+  useEffect(()=>{
+    if(navSmallMenu === true){
+      setNavSmallMenu(false)
+    }
+  },[location.pathname])
 
   // Function to handle mouse enter on menu items
   const handleDisplay = (e) => {
@@ -206,6 +212,8 @@ function Navbar() {
                   data-id="clothes"
                   className="btn active"
                   onMouseEnter={handleDisplay}
+                  onTouchStart={handleDisplay}  
+
                   style={{ cursor: "pointer" }}
                 >
                   clothes
@@ -214,6 +222,8 @@ function Navbar() {
                   data-id="shoes"
                   className="btn"
                   onMouseEnter={handleDisplay}
+                  onTouchStart={handleDisplay}  
+
                   style={{ cursor: "pointer" }}
                 >
                   shoes
@@ -222,6 +232,8 @@ function Navbar() {
                   data-id="perfumes"
                   className="btn "
                   onMouseEnter={handleDisplay}
+                  onTouchStart={handleDisplay}  
+
                   style={{ cursor: "pointer" }}
                 >
                   perfumes
@@ -230,6 +242,8 @@ function Navbar() {
                   data-id="brands"
                   className="btn "
                   onMouseEnter={handleDisplay}
+                  onTouchStart={handleDisplay}
+
                   style={{ cursor: "pointer" }}
                 >
                   brands
@@ -426,10 +440,10 @@ function Navbar() {
           zIndex: 333,
         }}
       >
-        <Clothing handleMouseLeave={handleMouseLeave} />
-        <Shoes handleMouseLeave={handleMouseLeave} />
-        <Perfumes handleMouseLeave={handleMouseLeave} />
-        <Brands handleMouseLeave={handleMouseLeave} />
+        <Clothing handleMouseLeave={handleMouseLeave} onTouchEnd ={handleMouseLeave} />
+        <Shoes handleMouseLeave={handleMouseLeave} onTouchEnd ={handleMouseLeave}/>
+        <Perfumes handleMouseLeave={handleMouseLeave} onTouchEnd ={handleMouseLeave} />
+        <Brands handleMouseLeave={handleMouseLeave} onTouchEnd ={handleMouseLeave} />
       </NavMenuLarge>
     </div>
   );

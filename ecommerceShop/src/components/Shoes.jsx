@@ -13,6 +13,9 @@ function Shoes(props) {
             position: "absolute",
             top: "2rem",
             left: 0,
+            paddingTop:"15px",
+            backgroundColor: "rgb(240, 255, 255,0.9)",
+  
             zIndex: 222,
             width:"100%"
           }}  
@@ -21,7 +24,6 @@ function Shoes(props) {
         <Box
           sx={{
             p: 2,
-            bgcolor: "rgb(240, 255, 255,0.9)",
             display: "grid",
             gridTemplateColumns: "repeat(3,1fr)",
           }}
@@ -115,8 +117,7 @@ function Shoes(props) {
                     All Category
                   </Link>
                 </li>
-                <li></li>
-                <li></li>
+                
               </ul>
             </section>
           </article>

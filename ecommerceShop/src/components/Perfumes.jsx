@@ -1,5 +1,6 @@
 import React from "react";
-import { Box,Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
+import { Link } from "react-router-dom";
 
 function Perfumes(props) {
   return (
@@ -9,20 +10,20 @@ function Perfumes(props) {
         className="nav--menu--alt"
         onMouseLeave={props.handleMouseLeave}
         style={{
-            position: "absolute",
-            top: "2rem",
-            left: 0,
-            zIndex: 222,
-            width:"100%"
-          }}  
-
+          position: "absolute",
+          top: "2rem",
+          left: 0,
+          zIndex: 222,
+          paddingTop:"15px",
+          backgroundColor: "rgb(240, 255, 255,0.9)",
+          width: "100%",
+        }}
       >
         <Box
           sx={{
             p: 2,
-            bgcolor: "rgb(240, 255, 255,0.9)",
             display: "grid",
-            gridTemplateColumns: "repeat(3,1fr)",
+            gridTemplateColumns: "repeat(2,1fr)",
           }}
         >
           <article>
@@ -34,9 +35,22 @@ function Perfumes(props) {
             </Typography>
             <section>
               <ul>
-                <li>All Category</li>
-                <li>Floral Scents</li>
-                <li>Citrus Fragrances</li>
+                <li>
+                  <Link
+                    to="/womenStorePerfume"
+                    style={{ textDecoration: "none", color: "black" }}
+                  >
+                    All Category
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/womenFloral"
+                    style={{ textDecoration: "none", color: "black" }}
+                  >
+                    Floral Scents
+                  </Link>
+                </li>
               </ul>
             </section>
           </article>
@@ -49,27 +63,26 @@ function Perfumes(props) {
             </Typography>
             <section>
               <ul>
-                <li>All Category</li>
-                <li>Woody Scents</li>
-                <li>Spicy Fragrances</li>
+                <li>
+                  <Link
+                    to="/menStorePerfume"
+                    style={{ textDecoration: "none", color: "black" }}
+                  >
+                    All Category
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/menStoreWS"
+                    style={{ textDecoration: "none", color: "black" }}
+                  >
+                    Woody Scents
+                  </Link>
+                </li>
               </ul>
             </section>
           </article>
-          <article>
-            <Typography
-              variant="h7"
-              sx={{ fontWeight: 600, marginLeft: "2.5rem" }}
-            >
-              Children
-            </Typography>
-            <section>
-              <ul>
-                <li>All Category</li>
-                <li>Fruity Scents</li>
-                <li>Bubblegum Fragrances</li>
-              </ul>
-            </section>
-          </article>
+
         </Box>
       </div>
     </div>

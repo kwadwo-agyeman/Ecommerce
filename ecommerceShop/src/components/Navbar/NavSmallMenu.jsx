@@ -84,14 +84,14 @@ const navSmallData = [
     header: "Shoes",
     gender: ["Women", "Men", "Children"],
     content: {
-      women: ["All Category", "Blouse", "Tunics"],
+      women: ["All Category", "Sneakers", "Heels"],
       men: ["All Category", "Athletic Shoes", "Casual Boots"],
-      children: ["All Category", "Dress", "Shirts"],
+      children: ["All Category"],
     },
     links: {
       women: ["/womenStoreShoe", "/womenStoreSn", "/womenStoreH"],
       men: ["/menStoreShoe", "/menStoreAS", "/menStoreCB"],
-      children: ["/childrenStore", "/childrenStoreD", "/childrenStoreS"],
+      children: ["/childrenStoreShoe"],
     },
   },
 ];

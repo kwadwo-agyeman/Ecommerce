@@ -3,6 +3,7 @@ import { Route } from "react-router-dom";
 import { Routes } from "react-router-dom";
 import Home from "./Home";
 import Navbar from "./components/Navbar/Navbar";
+import Preloader from "./components/preloader";
 import { CartProvider } from "./context/ShopContext";
 ///Clothing Pages
 import MenStore from "./clothingPages/MenStore";
@@ -22,6 +23,11 @@ import WomenStoreH from "./shoePages/WomenStoreH";
 import WomenStoreShoe from "./shoePages/WomenStoreShoe";
 import WomenStoreSn from "./shoePages/WomenStoreSn";
 import ChildrenStoreShoe from "./shoePages/ChildrenStoreShoe";
+// Perfume Pages
+import WomenStorePerfume from "./perfumePages/WomenStorePerfume";
+import WomenFloral from "./perfumePages/WomenFloral";
+import MenStorePerfume from "./perfumePages/MenStorePerfume";
+import MenStoreWS from "./perfumePages/MenStoreWS";
 function App() {
   // State to manage the array of cards
   const [cardArr, setCardArr] = useState([]);
@@ -70,7 +76,8 @@ function App() {
       <CartProvider>
         {/* Navbar component for navigation */}
         <Navbar />
-
+        {/*** Preloader */}
+        <Preloader/>
         {/* Routing for different pages */}
         <Routes>
           <Route path="/" element={<Home />} />
@@ -254,6 +261,54 @@ function App() {
             path="/childrenStoreShoe"
             element={
               <ChildrenStoreShoe
+                inspectCategory={inspectCategory}
+                toggleMenuHeight={toggleMenuHeight}
+                cardArr={cardArr}
+                filterCardContent={filterCardContent}
+              />
+            }
+          />
+
+          <Route
+            path="/womenStorePerfume"
+            element={
+              <WomenStorePerfume
+                inspectCategory={inspectCategory}
+                toggleMenuHeight={toggleMenuHeight}
+                cardArr={cardArr}
+                filterCardContent={filterCardContent}
+              />
+            }
+          />
+
+          <Route
+            path="/womenFloral"
+            element={
+              <WomenFloral
+                inspectCategory={inspectCategory}
+                toggleMenuHeight={toggleMenuHeight}
+                cardArr={cardArr}
+                filterCardContent={filterCardContent}
+              />
+            }
+          />
+
+          <Route
+            path="/menStorePerfume"
+            element={
+              <MenStorePerfume
+                inspectCategory={inspectCategory}
+                toggleMenuHeight={toggleMenuHeight}
+                cardArr={cardArr}
+                filterCardContent={filterCardContent}
+              />
+            }
+          />
+
+          <Route
+            path="/menStoreWS"
+            element={
+              <MenStoreWS
                 inspectCategory={inspectCategory}
                 toggleMenuHeight={toggleMenuHeight}
                 cardArr={cardArr}

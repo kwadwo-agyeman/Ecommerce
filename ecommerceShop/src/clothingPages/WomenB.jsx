@@ -105,7 +105,7 @@ const leftGrid = [
 const cardContent = [
   {
     id: 37,
-    img: "https://images.stylight.net/image/upload/t_web_product_330x440max_nobg/q_auto:eco,f_auto/cjdk0hnsa3iadetuctrf.webp",
+    img: "https://target.scene7.com/is/image/Target/GUEST_e93661d3-3c10-4ae0-926d-fc5e20ca556a?wid=488&hei=488&fmt=pjpeg",
     productName: "Green Women's Satin Blouse",
     gender: "women",
     price: 145.0,

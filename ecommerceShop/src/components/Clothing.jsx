@@ -13,6 +13,8 @@ function Clothing(props) {
           position: "absolute",
           top: "2rem",
           left: 0,
+          paddingTop: "15px",
+          backgroundColor: "rgb(240, 255, 255,0.9)",
           zIndex: 222,
           width: "100%",
         }}
@@ -20,7 +22,6 @@ function Clothing(props) {
         <Box
           sx={{
             p: 2,
-            bgcolor: "rgb(240, 255, 255,0.9)",
             display: "grid",
             gridTemplateColumns: "repeat(3,1fr)",
           }}
@@ -34,7 +35,7 @@ function Clothing(props) {
             </Typography>
             <section>
               <ul>
-              <li>
+                <li>
                   <Link
                     to="/womenStore"
                     style={{ textDecoration: "none", color: "black" }}
@@ -107,7 +108,7 @@ function Clothing(props) {
             </Typography>
             <section>
               <ul>
-              <li>
+                <li>
                   <Link
                     to="/childrenStore"
                     style={{ textDecoration: "none", color: "black" }}

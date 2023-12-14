@@ -18,7 +18,7 @@ function Card(props) {
       <Box
         sx={{
           border: "1px solid #ECF0F1",
-          height: "32rem",
+          height: "28rem",
           borderBottom: "2px solid #ECF0F1",
           transition: "all 200ms ease",
           "&:hover": {
@@ -31,8 +31,8 @@ function Card(props) {
         }}
       >
         {/* Image Section */}
-        <Box sx={{ p: 1, position: "relative" }}>
-          <img style={{ height: "23rem" }} src={props.img} alt="" />
+        <Box sx={{ p: 1, position: "relative" ,height: "70%"}}>
+          <img style={{width:"100%",height:"100%",objectFit:"contain" }} src={props.img} alt="" />
           {/* Favorite Icon */}
           <Box sx={{ position: "absolute", top: 6, right: 6 }}>
             <Checkbox
@@ -46,7 +46,7 @@ function Card(props) {
         {/* Divider */}
         <Divider></Divider>
         {/* Content Section */}
-        <Box sx={{ p: 1 }}>
+        <Box sx={{ p: 1, height:"30%" }}>
           {/* Product Name */}
           <Typography sx={{ fontWeight: 500 }}>{props.productName}</Typography>
           <br />
@@ -72,7 +72,7 @@ function Card(props) {
                 badgeContent={cartItem ? cartItem.quantity : 0}
                 color="primary"
               >
-                <ShoppingCart
+                <ShoppingCart sx={{cursor:"pointer"}}
                   onClick={() => props.addToCart(props.cardItem, 1)}
                 />
               </Badge>
