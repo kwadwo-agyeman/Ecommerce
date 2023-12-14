@@ -28,6 +28,11 @@ import WomenStorePerfume from "./perfumePages/WomenStorePerfume";
 import WomenFloral from "./perfumePages/WomenFloral";
 import MenStorePerfume from "./perfumePages/MenStorePerfume";
 import MenStoreWS from "./perfumePages/MenStoreWS";
+//Brand
+import Dior from "./brandsPages/Dior";
+import Hermes from "./brandsPages/Hermes";
+import Nike from "./brandsPages/Nike";
+import LV from "./brandsPages/LV";
 function App() {
   // State to manage the array of cards
   const [cardArr, setCardArr] = useState([]);
@@ -60,7 +65,8 @@ function App() {
         if (
           item.color === title ||
           item.brand === title ||
-          item.priceCategory === title
+          item.priceCategory === title ||
+          item.gender === title
         ) {
           return true;
         }
@@ -77,7 +83,7 @@ function App() {
         {/* Navbar component for navigation */}
         <Navbar />
         {/*** Preloader */}
-        <Preloader/>
+        <Preloader />
         {/* Routing for different pages */}
         <Routes>
           <Route path="/" element={<Home />} />
@@ -309,6 +315,54 @@ function App() {
             path="/menStoreWS"
             element={
               <MenStoreWS
+                inspectCategory={inspectCategory}
+                toggleMenuHeight={toggleMenuHeight}
+                cardArr={cardArr}
+                filterCardContent={filterCardContent}
+              />
+            }
+          />
+
+          <Route
+            path="/dior"
+            element={
+              <Dior
+                inspectCategory={inspectCategory}
+                toggleMenuHeight={toggleMenuHeight}
+                cardArr={cardArr}
+                filterCardContent={filterCardContent}
+              />
+            }
+          />
+
+          <Route
+            path="/hermes"
+            element={
+              <Hermes
+                inspectCategory={inspectCategory}
+                toggleMenuHeight={toggleMenuHeight}
+                cardArr={cardArr}
+                filterCardContent={filterCardContent}
+              />
+            }
+          />
+
+          <Route
+            path="/nike"
+            element={
+              <Nike
+                inspectCategory={inspectCategory}
+                toggleMenuHeight={toggleMenuHeight}
+                cardArr={cardArr}
+                filterCardContent={filterCardContent}
+              />
+            }
+          />
+
+          <Route
+            path="/lv"
+            element={
+              <LV
                 inspectCategory={inspectCategory}
                 toggleMenuHeight={toggleMenuHeight}
                 cardArr={cardArr}

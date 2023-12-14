@@ -38,23 +38,23 @@ function NavSmallMenu() {
             </Breadcrumbs>
 
             {/****** CHILDREN ******/}
-            <Breadcrumbs aria-label={item.header} sx={{ p: 1 }}>
-              <Typography sx={{ display: "block" }}>
-                {item.gender[2]}
-              </Typography>
-
-              <Link to={item.links.children[0]}>
-                {item.content.children[0]}
-              </Link>
-
-              <Link to={item.links.children[1]}>
-                {item.content.children[1]}
-              </Link>
-
-              <Link to={item.links.children[2]}>
-                {item.content.children[2]}
-              </Link>
-            </Breadcrumbs>
+            {/********** CHILDREN ******* */}
+            {item.links.children && (
+              <Breadcrumbs aria-label={item.header} sx={{ p: 1 }}>
+                <Typography sx={{ display: "block" }}>
+                  {item.gender[2]}
+                </Typography>
+                <Link to={item.links.children[0]}>
+                  {item.content.children[0]}
+                </Link>
+                <Link to={item.links.children[1]}>
+                  {item.content.children[1]}
+                </Link>
+                <Link to={item.links.children[2]}>
+                  {item.content.children[2]}
+                </Link>
+              </Breadcrumbs>
+            )}
 
             <Divider></Divider>
           </Box>
@@ -92,6 +92,18 @@ const navSmallData = [
       women: ["/womenStoreShoe", "/womenStoreSn", "/womenStoreH"],
       men: ["/menStoreShoe", "/menStoreAS", "/menStoreCB"],
       children: ["/childrenStoreShoe"],
+    },
+  },
+  {
+    header: "Perfumes",
+    gender: ["Women", "Men"],
+    content: {
+      women: ["All Category", "Floral Scents"],
+      men: ["All Category", "Woody Scents"],
+    },
+    links: {
+      women: ["/womenStorePerfume", "/womenFloral"],
+      men: ["/menStorePerfume", "/menStoreWS"],
     },
   },
 ];

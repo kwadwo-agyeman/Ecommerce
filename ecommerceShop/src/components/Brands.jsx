@@ -34,7 +34,7 @@ function Brands(props) {
             }}
           >
             <li>
-              <Link>
+              <Link to="/nike">
                 <img
                   src="https://upload.wikimedia.org/wikipedia/commons/9/94/Old_Nike_logo.jpg"
                   alt="nike"
@@ -47,7 +47,7 @@ function Brands(props) {
               </Link>
             </li>
             <li>
-              <Link>
+              <Link to="/dior">
                 <img
                   src="https://static.vecteezy.com/system/resources/previews/023/599/608/original/christian-dior-brand-logo-black-design-symbol-luxury-clothes-fashion-illustration-free-vector.jpg"
                   alt="dior"
@@ -60,7 +60,7 @@ function Brands(props) {
               </Link>
             </li>
             <li>
-              <Link>
+              <Link to="/lv">
                 <img
                   src="https://1000logos.net/wp-content/uploads/2021/04/Louis-Vuitton-logo.png"
                   alt="louis vouitton"
@@ -73,7 +73,7 @@ function Brands(props) {
               </Link>
             </li>
             <li>
-              <Link>
+              <Link to="/hermes">
                 <img
                   src="https://cdn.shopify.com/s/files/1/0558/6413/1764/files/Rewrite_Hermes_Logo_Design_History_Evolution_0_1024x1024.jpg?v=1694742016"
                   alt="hermes"
