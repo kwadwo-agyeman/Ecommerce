@@ -418,6 +418,7 @@ function Navbar() {
           transform: navSmallMenu ? "translateY(0)" : "translateY(-100%)",
           transition: "all 400ms ease",
           position: "fixed",
+          height:"100vh",
           width: "100%",
           top: "3rem",
           left: 0,

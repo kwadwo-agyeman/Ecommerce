@@ -7,9 +7,9 @@ function NavSmallMenu() {
     <div>
       <section style={{ paddingBottom: "2rem" }}>
         {navSmallData.map((item, index) => (
-          <Box key={index}>
+          <Box key={index} sx={{padding:"2rem 0" }}>
             <article
-              style={{ display: "flex", alignItems: "center", gap: "15px" }}
+              style={{ display: "flex", alignItems: "center", gap: "15px"}}
             >
               <Typography variant="h5" sx={{ ml: "10px" }}>
                 {item.header}

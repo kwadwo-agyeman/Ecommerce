@@ -1,14 +1,14 @@
 import { Box, Button, Typography } from "@mui/material";
 import React from "react";
-
+import headerImg from '../assets/headerImg.jpg'
 function Header() {
   return (
     <Box
       sx={{
         background:
-          "linear-gradient(345deg,rgb(0,0,0,0.3),rgb(0,0,225,0.2)), url(https://images.pexels.com/photos/833052/pexels-photo-833052.jpeg?auto=compress&cs=tinysrgb&w=600) center/cover no-repeat",
+          `linear-gradient(345deg,rgb(0,0,0,0.3),rgb(0,0,225,0.2)), url(${headerImg}) center/cover no-repeat`,
         width: "100%",
-        height:{xs:"60vh",sm:"80vh"},
+        height:{xs:"60vh",sm:"90vh"},
         marginTop: "-1rem",
         position: "relative",
         zIndex: 111,
