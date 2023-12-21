@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import BannerImg from "../assets/banner1.jpg";
+import BannerImg from "../../assets/banner1.jpg";
 import { Box, Button, Typography } from "@mui/material";
 function Banner1() {
   return (

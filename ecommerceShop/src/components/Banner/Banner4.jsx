@@ -1,15 +1,19 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
-import Img1 from "../assets/b4Img1.webp";
-import Img2 from "../assets/b4Img2.jpg";
-import Img3 from "../assets/b4Img3.jpg";
+import Img1 from "../../assets/b4Img1.webp";
+import Img2 from "../../assets/b4Img2.jpg";
+import Img3 from "../../assets/b4Img3.jpg";
+import './banner.css'
 
 function Banner4() {
   return (
     <Box
       sx={{
-        display: { xs: "block", sm: "grid" },
+        display: { xs: "flex", sm: "grid" },
+        flexDirection:"column",
+        alignItems:"center",
+        justifyContent:"center",
         gridTemplateColumns: "repeat(3,1fr)",
         gap: 2,
         p: { xs: "1px", sm: "15px" },
@@ -17,9 +21,9 @@ function Banner4() {
       }}
     >
       {bannerArr.map((item, index) => (
-        <article style={{padding:"15px"}} key={index}>
+        <article className="banner--container" style={{padding:"15px"}} key={index}>
           <Link>
-            <img style={{}} src={item.img} alt="" />
+            <img className="banner--img" style={{}} src={item.img} alt="" />
           </Link>
           <Typography
             variant="h4"
@@ -27,6 +31,7 @@ function Banner4() {
               textAlign: "center",
               fontWeight: 600,
               fontSize: "30px",
+              mt:3
             }}
           >
             {item.header}
